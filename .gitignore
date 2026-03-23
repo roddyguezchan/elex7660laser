@@ -1,0 +1,7 @@
+.qsys_edit/
+db/
+incremental_db/
+laser/
+output_files/
+software/.metadata
+software/app/build
