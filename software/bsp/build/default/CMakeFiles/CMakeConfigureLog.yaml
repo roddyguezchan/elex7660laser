@@ -1,0 +1,12 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      The target system is: Generic -  - Nios V/m
+      The host system is: Windows - 10.0.26200 - AMD64
+...

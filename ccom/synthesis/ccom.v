@@ -66,6 +66,8 @@ module ccom (
 	wire   [1:0] mm_interconnect_0_pio_q2_s1_address;                            // mm_interconnect_0:pio_q2_s1_address -> pio_q2:address
 	wire  [31:0] mm_interconnect_0_pio_q3_s1_readdata;                           // pio_q3:readdata -> mm_interconnect_0:pio_q3_s1_readdata
 	wire   [1:0] mm_interconnect_0_pio_q3_s1_address;                            // mm_interconnect_0:pio_q3_s1_address -> pio_q3:address
+	wire  [31:0] mm_interconnect_0_pio_q1_s1_readdata;                           // pio_q1:readdata -> mm_interconnect_0:pio_q1_s1_readdata
+	wire   [1:0] mm_interconnect_0_pio_q1_s1_address;                            // mm_interconnect_0:pio_q1_s1_address -> pio_q1:address
 	wire  [31:0] mm_interconnect_0_intel_niosv_m_0_timer_sw_agent_readdata;      // intel_niosv_m_0:timer_sw_agent_readdata -> mm_interconnect_0:intel_niosv_m_0_timer_sw_agent_readdata
 	wire         mm_interconnect_0_intel_niosv_m_0_timer_sw_agent_waitrequest;   // intel_niosv_m_0:timer_sw_agent_waitrequest -> mm_interconnect_0:intel_niosv_m_0_timer_sw_agent_waitrequest
 	wire   [5:0] mm_interconnect_0_intel_niosv_m_0_timer_sw_agent_address;       // mm_interconnect_0:intel_niosv_m_0_timer_sw_agent_address -> intel_niosv_m_0:timer_sw_agent_address
@@ -189,11 +191,11 @@ module ccom (
 	);
 
 	ccom_pio_q0 pio_q1 (
-		.clk      (pll_0_outclk0_clk),               //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset), //               reset.reset_n
-		.address  (),                                //                  s1.address
-		.readdata (),                                //                    .readdata
-		.in_port  (q1_data_export)                   // external_connection.export
+		.clk      (pll_0_outclk0_clk),                    //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),      //               reset.reset_n
+		.address  (mm_interconnect_0_pio_q1_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_pio_q1_s1_readdata), //                    .readdata
+		.in_port  (q1_data_export)                        // external_connection.export
 	);
 
 	ccom_pio_q0 pio_q2 (
@@ -276,6 +278,8 @@ module ccom (
 		.pio_1_s1_readdata                                 (mm_interconnect_0_pio_1_s1_readdata),                            //                                            .readdata
 		.pio_q0_s1_address                                 (mm_interconnect_0_pio_q0_s1_address),                            //                                   pio_q0_s1.address
 		.pio_q0_s1_readdata                                (mm_interconnect_0_pio_q0_s1_readdata),                           //                                            .readdata
+		.pio_q1_s1_address                                 (mm_interconnect_0_pio_q1_s1_address),                            //                                   pio_q1_s1.address
+		.pio_q1_s1_readdata                                (mm_interconnect_0_pio_q1_s1_readdata),                           //                                            .readdata
 		.pio_q2_s1_address                                 (mm_interconnect_0_pio_q2_s1_address),                            //                                   pio_q2_s1.address
 		.pio_q2_s1_readdata                                (mm_interconnect_0_pio_q2_s1_readdata),                           //                                            .readdata
 		.pio_q3_s1_address                                 (mm_interconnect_0_pio_q3_s1_address),                            //                                   pio_q3_s1.address

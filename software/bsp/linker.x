@@ -1,10 +1,10 @@
 /*
  * linker.x - Linker script
  *
- * Machine generated for CPU 'intel_niosv_m_0' in SOPC Builder design 'laser'
- * SOPC Builder design path: ../../laser.sopcinfo
+ * Machine generated for CPU 'intel_niosv_m_0' in SOPC Builder design 'ccom'
+ * SOPC Builder design path: ../../ccom.sopcinfo
  *
- * Generated: Sun Mar 22 11:56:09 PDT 2026
+ * Generated: Mon Mar 23 13:16:09 PDT 2026
  */
 
 /*
