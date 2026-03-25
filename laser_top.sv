@@ -2,6 +2,12 @@ module laser_top
   ( input  logic clk50, // internal system 50MHz clock
     input  logic [1:0] KEY, // onboard FPGA dev board buttons
     output logic [7:0] LED, // onboard FPGA dev board LED strip
+	 
+	 output logic [7:0] leds,
+	 output logic [3:0] ct,
+	 
+	 input logic [3:0] SW, 
+	 output logic [3:0] GPIO_0, // motor driver output
     
 	 // onboard FPGA dev board ADC chip
 	 input  logic ADC_SDO, 
@@ -18,7 +24,7 @@ module laser_top
 	// ADC QPD scanner module
 	adc_qpd_scanner qpd_inst(
 		.clk(clk50),
-		.reset(KEY[0]), // the launchpad switches are active low
+		.reset(SW[0]), // the launchpad switches are active low
 		.sdo(ADC_SDO),
 		.convst(ADC_CONVST),
 		.sck(ADC_SCK),
@@ -54,6 +60,21 @@ module laser_top
 		.digs({thousands,hundreds,tens,ones}),
 		.leds(leds),
 		.ct(ct)
+	);
+	
+	gimbal gimbal0(
+		.clk(clk),
+		.reset(KEY[1]),
+		.tr(q0),
+		.br(q1),
+		.bl(q1),
+		.tl(q3),
+		.yaw_step(GPIO_0[0]),
+		.yaw_dir(GPIO_0[1]),
+		.pitch_step(GPIO_0[2]),
+		.pitch_dir(GPIO_0[3]),
+		.max_disp(LED[1]),
+		.idle(LED[2])
 	);
 	
 	

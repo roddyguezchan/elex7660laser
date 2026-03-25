@@ -7,8 +7,12 @@ module adc_qpd_scanner (
     input  logic sdo,              // serial data from ADC chip
     output logic convst, sck, sdi, // ADC control signals
     
-    // Direct outputs for motor/logic modules (Latest sampled value)
-    output logic [11:0] q0, q1, q2, q3
+    // Direct outputs for motor/logic modules (latest sampled value)
+    output logic [11:0] q0, q1, q2, q3,
+	 
+	 // Additional logic signals
+	 output logic available
+	 
 );
 
    // ADC states and state duration counter
