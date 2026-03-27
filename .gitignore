@@ -1,8 +1,42 @@
-.qsys_edit/
+# Gemini Generated .gitignore
+# Quartus-generated Compilation & Database folders
 db/
 incremental_db/
-laser/
 output_files/
-software/.metadata
-software/app/build
+.qsys_edit/
+hps_isw_handoff/
+greybox_tmp/
+
+# System-level / Qsys / Platform Designer
+# (Exclude generated synthesis/simulation files, keep the .qsys source)
+/laser/
+# Note: If 'laser' is your project name, Quartus creates a folder 
+# with the same name containing generated HDL. Definitely ignore it.
+
+# Logic Analyzer (Signal Tap)
+stp1_auto_generated.stp
+*.stp
+
+# Compilation Reports and Logs
+*.rpt
+*.summary
+*.jdi
+*.pin
+*.done
+*.qws
 *.bak
+*.txt
+*.log
+
+# Software (Nios II / HPS Eclipse)
+software/*/build/
+software/*/*/build/
+software/.metadata/
+software/RemoteSystemsTempFiles/
+*.elf
+*.obj
+*.map
+
+# OS Specific
+.DS_Store
+Thumbs.db
