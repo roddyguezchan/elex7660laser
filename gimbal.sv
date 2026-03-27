@@ -10,27 +10,13 @@ module gimbal #(
     output logic        max_disp, idle
 );
 	logic [11:0] zero [4];
-	signed [13:0] diff_q [4];
-	signed [15:0] yaw_err, pitch_err;
+	logic signed [13:0] diff_q [4];
+	logic signed [15:0] yaw_err, pitch_err;
+	logic signed [15:0] yaw_count, pitch_count;
 
 	// step clock
 	logic clk0;
 	clkdiv #(50_000_000, 1_000) c0 (clk50, clk0);
-
-	// displacement counters
-	signed [15:0] yaw_count, pitch_count;
-
-	// set zeros if reset is pressed
-	always_ff @(posedge clk) begin
-		if (reset) begin
-			zero[0] <= tr;
-			zero[1] <= tl;
-			zero[2] <= bl;
-			zero[3] <= br;
-			yaw_count   <= 0;
-			pitch_count <= 0;
-		end
-	end
 
 	// calculate errors
 	always_comb begin
@@ -48,12 +34,26 @@ module gimbal #(
 
 		max_disp = (abs(yaw_count) >= YAW_MAXDISP) || (abs(pitch_count) >= PITCH_MAXDISP);
 	end
+	
+	// set zeros if reset is pressed
+	always_ff @(posedge clk) begin
+		if (reset) begin
+			zero[0] <= tr;
+			zero[1] <= tl;
+			zero[2] <= bl;
+			zero[3] <= br;
+		end
+	end
 
 	// motor control
 	always_ff @(posedge clk0) begin
 		if (reset) begin
-			yaw_step <= 0;
-			pitch_step <= 0;
+			yaw_step    <= 0;
+			pitch_step  <= 0;
+			yaw_count   <= 0;
+			pitch_count <= 0;
+			yaw_dir     <= 0;
+			pitch_dir   <= 0;
 		end 
 		else begin
 			// yaw control
