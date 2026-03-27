@@ -199,6 +199,7 @@ set_location_assignment PIN_AD23 -to GPIO_1[32]
 set_location_assignment PIN_AE23 -to GPIO_1[33]
 set_location_assignment PIN_AA18 -to GPIO_1[34]
 set_location_assignment PIN_AC22 -to GPIO_1[35]
+set_global_assignment -name SYSTEMVERILOG_FILE gimbal.sv
 set_global_assignment -name SYSTEMVERILOG_FILE bin_to_bcd.sv
 set_global_assignment -name SYSTEMVERILOG_FILE seg_display.sv
 set_global_assignment -name SYSTEMVERILOG_FILE clkdiv.sv

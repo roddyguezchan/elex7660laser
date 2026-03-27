@@ -1,12 +1,8 @@
 module laser_top
   ( input  logic clk50, // internal system 50MHz clock
     input  logic [1:0] KEY, // onboard FPGA dev board buttons
+	 input logic [3:0] SW, // onboard FPGA dev board switches
     output logic [7:0] LED, // onboard FPGA dev board LED strip
-	 
-	 output logic [7:0] leds,
-	 output logic [3:0] ct,
-	 
-	 input logic [3:0] SW, 
 	 output logic [3:0] GPIO_0, // motor driver output
     
 	 // onboard FPGA dev board ADC chip
@@ -37,29 +33,13 @@ module laser_top
 	
    ccom nios_system( 
 		.clk50_clk(clk50), 
-		.leds_export(LED),               
+		//.leds_export(LED),               
 		.reset_n_reset_n(KEY[0]),
 		.button_pio_export(KEY[1]),
 		.q0_data_export(q0),
 		.q1_data_export(q1),
 		.q2_data_export(q2),
 		.q3_data_export(q3)
-	);
-	
-	logic [3:0] thousands, hundreds, tens, ones;
-	 bin_to_bcd q_to_bcd(
-		.binary(q0),
-		.thousands(thousands),
-		.hundreds(hundreds),
-		.tens(tens),
-		.ones(ones)
-	 );
-	
-	seg_display disp(
-		.clk(clk),
-		.digs({thousands,hundreds,tens,ones}),
-		.leds(leds),
-		.ct(ct)
 	);
 	
 	gimbal gimbal0(
