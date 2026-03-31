@@ -21,7 +21,7 @@ juart-terminal
 
 int main() {
     printf("QPD ADC VALUES.....\n");
-    printf("Q0 (TR) | Q1 (BR) | Q2 (BL) | Q3 (TL)\n");
+    printf("Q0 (TR) | Q1 (BR) | Q2 (BL) | Q3 (TL) | MDisp | Idle | Left | Right | Up | Down | RAW \n");
     printf("--------------------------------------\n");
 
     while (1) {
@@ -32,11 +32,12 @@ int main() {
         int q1 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q1_BASE);
         int q2 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q2_BASE);
         int q3 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q3_BASE);
+        int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_STATUS_BASE);
 
         // Print values on one line.
         // %4d ensures the numbers don't "jump" around if they change digits.
         // \r returns the cursor to the start of the line.
-        printf(" %4d   |  %4d   |  %4d   |  %4d   \r", q0, q1, q2, q3);
+        printf(" %4d   |  %4d   |  %4d   |  %4d   |   %1d   |  %1d  |  %1d  |  %1d  |  %1d  |  %1d  | %4d \r", q0, q1, q2, q3, status&1, (status>>1)&1, (status>>2)&1, (status>>3)&1, (status>>4)&1, (status>>5)&1, status);
 
         // Flush the output to ensure it updates immediately in RiscFree
         fflush(stdout);

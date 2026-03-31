@@ -11,10 +11,11 @@ module ccom (
 		input  wire [11:0] q1_data_export,    //    q1_data.export
 		input  wire [11:0] q2_data_export,    //    q2_data.export
 		input  wire [11:0] q3_data_export,    //    q3_data.export
-		input  wire        reset_n_reset_n    //    reset_n.reset_n
+		input  wire        reset_n_reset_n,   //    reset_n.reset_n
+		input  wire [11:0] status_export      //     status.export
 	);
 
-	wire         pll_0_outclk0_clk;                                              // pll_0:outclk_0 -> [intel_niosv_m_0:clk, irq_mapper:clk, jtag_uart_0:clk, mm_interconnect_0:pll_0_outclk0_clk, onchip_memory2_0:clk, pio_0:clk, pio_1:clk, pio_q0:clk, pio_q1:clk, pio_q2:clk, pio_q3:clk, rst_controller:clk]
+	wire         pll_0_outclk0_clk;                                              // pll_0:outclk_0 -> [intel_niosv_m_0:clk, irq_mapper:clk, jtag_uart_0:clk, mm_interconnect_0:pll_0_outclk0_clk, onchip_memory2_0:clk, pio_0:clk, pio_1:clk, pio_q0:clk, pio_q1:clk, pio_q2:clk, pio_q3:clk, pio_status:clk, rst_controller:clk]
 	wire         intel_niosv_m_0_dbg_reset_out_reset;                            // intel_niosv_m_0:dbg_reset_out_reset -> intel_niosv_m_0:ndm_reset_in_reset
 	wire  [31:0] intel_niosv_m_0_data_manager_readdata;                          // mm_interconnect_0:intel_niosv_m_0_data_manager_readdata -> intel_niosv_m_0:data_manager_readdata
 	wire         intel_niosv_m_0_data_manager_waitrequest;                       // mm_interconnect_0:intel_niosv_m_0_data_manager_waitrequest -> intel_niosv_m_0:data_manager_waitrequest
@@ -68,6 +69,8 @@ module ccom (
 	wire   [1:0] mm_interconnect_0_pio_q3_s1_address;                            // mm_interconnect_0:pio_q3_s1_address -> pio_q3:address
 	wire  [31:0] mm_interconnect_0_pio_q1_s1_readdata;                           // pio_q1:readdata -> mm_interconnect_0:pio_q1_s1_readdata
 	wire   [1:0] mm_interconnect_0_pio_q1_s1_address;                            // mm_interconnect_0:pio_q1_s1_address -> pio_q1:address
+	wire  [31:0] mm_interconnect_0_pio_status_s1_readdata;                       // pio_status:readdata -> mm_interconnect_0:pio_status_s1_readdata
+	wire   [1:0] mm_interconnect_0_pio_status_s1_address;                        // mm_interconnect_0:pio_status_s1_address -> pio_status:address
 	wire  [31:0] mm_interconnect_0_intel_niosv_m_0_timer_sw_agent_readdata;      // intel_niosv_m_0:timer_sw_agent_readdata -> mm_interconnect_0:intel_niosv_m_0_timer_sw_agent_readdata
 	wire         mm_interconnect_0_intel_niosv_m_0_timer_sw_agent_waitrequest;   // intel_niosv_m_0:timer_sw_agent_waitrequest -> mm_interconnect_0:intel_niosv_m_0_timer_sw_agent_waitrequest
 	wire   [5:0] mm_interconnect_0_intel_niosv_m_0_timer_sw_agent_address;       // mm_interconnect_0:intel_niosv_m_0_timer_sw_agent_address -> intel_niosv_m_0:timer_sw_agent_address
@@ -78,7 +81,7 @@ module ccom (
 	wire  [31:0] mm_interconnect_0_intel_niosv_m_0_timer_sw_agent_writedata;     // mm_interconnect_0:intel_niosv_m_0_timer_sw_agent_writedata -> intel_niosv_m_0:timer_sw_agent_writedata
 	wire         irq_mapper_receiver0_irq;                                       // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [15:0] intel_niosv_m_0_platform_irq_rx_irq;                            // irq_mapper:sender_irq -> intel_niosv_m_0:platform_irq_rx_irq
-	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [intel_niosv_m_0:reset_reset, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:intel_niosv_m_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, pio_0:reset_n, pio_1:reset_n, pio_q0:reset_n, pio_q1:reset_n, pio_q2:reset_n, pio_q3:reset_n, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [intel_niosv_m_0:reset_reset, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:intel_niosv_m_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, pio_0:reset_n, pio_1:reset_n, pio_q0:reset_n, pio_q1:reset_n, pio_q2:reset_n, pio_q3:reset_n, pio_status:reset_n, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                             // rst_controller:reset_req -> [onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 
 	ccom_intel_niosv_m_0 intel_niosv_m_0 (
@@ -214,6 +217,14 @@ module ccom (
 		.in_port  (q3_data_export)                        // external_connection.export
 	);
 
+	ccom_pio_q0 pio_status (
+		.clk      (pll_0_outclk0_clk),                        //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),          //               reset.reset_n
+		.address  (mm_interconnect_0_pio_status_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_pio_status_s1_readdata), //                    .readdata
+		.in_port  (status_export)                             // external_connection.export
+	);
+
 	ccom_pll_0 pll_0 (
 		.refclk   (clk50_clk),         //  refclk.clk
 		.rst      (~reset_n_reset_n),  //   reset.reset
@@ -283,7 +294,9 @@ module ccom (
 		.pio_q2_s1_address                                 (mm_interconnect_0_pio_q2_s1_address),                            //                                   pio_q2_s1.address
 		.pio_q2_s1_readdata                                (mm_interconnect_0_pio_q2_s1_readdata),                           //                                            .readdata
 		.pio_q3_s1_address                                 (mm_interconnect_0_pio_q3_s1_address),                            //                                   pio_q3_s1.address
-		.pio_q3_s1_readdata                                (mm_interconnect_0_pio_q3_s1_readdata)                            //                                            .readdata
+		.pio_q3_s1_readdata                                (mm_interconnect_0_pio_q3_s1_readdata),                           //                                            .readdata
+		.pio_status_s1_address                             (mm_interconnect_0_pio_status_s1_address),                        //                               pio_status_s1.address
+		.pio_status_s1_readdata                            (mm_interconnect_0_pio_status_s1_readdata)                        //                                            .readdata
 	);
 
 	ccom_irq_mapper irq_mapper (

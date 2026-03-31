@@ -7,7 +7,7 @@ module gimbal #(
     input  logic [11:0] tr, tl, bl, br, 
     input  logic        reset,
     output logic        yaw_step, yaw_dir, pitch_step, pitch_dir,
-    output logic        max_disp, idle
+    output logic        max_disp, idle, left, right, up, down
 );
 	logic [11:0] zero [4];
 	logic signed [13:0] diff_q [4];
@@ -16,7 +16,7 @@ module gimbal #(
 
 	// step clock
 	logic clk0;
-	clkdiv #(50_000_000, 1_000) c0 (clk50, clk0);
+	clkdiv #(50_000_000, 100) c0 (clk50, clk0);
 
 	// calculate errors
 	always_comb begin
@@ -33,6 +33,11 @@ module gimbal #(
 		idle = (yaw_err < THRESHOLD && yaw_err > -THRESHOLD) && (pitch_err < THRESHOLD && pitch_err > -THRESHOLD);
 
 		max_disp = (abs(yaw_count) >= YAW_MAXDISP) || (abs(pitch_count) >= PITCH_MAXDISP);
+		
+		left = yaw_err > 0;
+		right = yaw_err < 0;
+		up = pitch_err > 0;
+		down = pitch_err < 0;
 	end
 	
 	// set zeros if reset is pressed

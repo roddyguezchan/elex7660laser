@@ -7,7 +7,8 @@
 			q1_data_export    : in  std_logic_vector(11 downto 0) := (others => 'X'); -- export
 			q2_data_export    : in  std_logic_vector(11 downto 0) := (others => 'X'); -- export
 			q3_data_export    : in  std_logic_vector(11 downto 0) := (others => 'X'); -- export
-			reset_n_reset_n   : in  std_logic                     := 'X'              -- reset_n
+			reset_n_reset_n   : in  std_logic                     := 'X';             -- reset_n
+			status_export     : in  std_logic_vector(11 downto 0) := (others => 'X')  -- export
 		);
 	end component ccom;
 
@@ -20,6 +21,7 @@
 			q1_data_export    => CONNECTED_TO_q1_data_export,    --    q1_data.export
 			q2_data_export    => CONNECTED_TO_q2_data_export,    --    q2_data.export
 			q3_data_export    => CONNECTED_TO_q3_data_export,    --    q3_data.export
-			reset_n_reset_n   => CONNECTED_TO_reset_n_reset_n    --    reset_n.reset_n
+			reset_n_reset_n   => CONNECTED_TO_reset_n_reset_n,   --    reset_n.reset_n
+			status_export     => CONNECTED_TO_status_export      --     status.export
 		);
 

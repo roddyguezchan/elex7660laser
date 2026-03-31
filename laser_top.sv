@@ -10,12 +10,9 @@ module laser_top
     output logic ADC_CONVST, ADC_SDI, ADC_SCK
 	 ) ;
 	
-	// clock divider for 7seg LED
-	logic clk;
-	clkdiv #(50_000_000, 1_000) c0 (clk50, clk);
-	
 	// ADC samples
 	logic [11:0] q0, q1, q2, q3;
+	logic [5:0] status_sig;
    
 	// ADC QPD scanner module
 	adc_qpd_scanner qpd_inst(
@@ -33,13 +30,14 @@ module laser_top
 	
    ccom nios_system( 
 		.clk50_clk(clk50), 
-		//.leds_export(LED),               
+		.leds_export(LED),               
 		.reset_n_reset_n(KEY[0]),
 		.button_pio_export(KEY[1]),
 		.q0_data_export(q0),
 		.q1_data_export(q1),
 		.q2_data_export(q2),
-		.q3_data_export(q3)
+		.q3_data_export(q3),
+		.status_export({ 6'b100000, status_sig })
 	);
 	
 	gimbal gimbal0(
@@ -53,8 +51,12 @@ module laser_top
 		.yaw_dir(GPIO_0[1]),
 		.pitch_step(GPIO_0[2]),
 		.pitch_dir(GPIO_0[3]),
-		.max_disp(LED[1]),
-		.idle(LED[2])
+		.max_disp(status_sig[0]),
+		.idle(status_sig[1]),
+		.left(status_sig[2]),
+		.right(status_sig[3]),
+		.up(status_sig[4]),
+		.down(status_sig[5]),
 	);
 	
 	
