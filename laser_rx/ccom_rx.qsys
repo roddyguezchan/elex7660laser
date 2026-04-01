@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "655440";
+         value = "655472";
          type = "String";
       }
    }
@@ -85,7 +85,39 @@
    {
       datum baseAddress
       {
+         value = "655456";
+         type = "String";
+      }
+   }
+   element pio_fpga_i
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element pio_fpga_i.s1
+   {
+      datum baseAddress
+      {
          value = "655424";
+         type = "String";
+      }
+   }
+   element pio_fpga_o
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+   element pio_fpga_o.s1
+   {
+      datum baseAddress
+      {
+         value = "655440";
          type = "String";
       }
    }
@@ -125,6 +157,16 @@
    type="conduit"
    dir="end" />
  <interface name="reset_n" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="sysin"
+   internal="pio_fpga_o.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="sysout"
+   internal="pio_fpga_i.external_connection"
+   type="conduit"
+   dir="end" />
  <module name="clk_0" kind="clock_source" version="25.1" enabled="1">
   <parameter name="clockFrequency" value="85000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -142,7 +184,7 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="AUTO_PLATFORM_IRQ_RX_INTERRUPTS_USED" value="1" />
   <parameter name="clockFrequency" value="80000000" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x40000' end='0x80000' type='altera_avalon_onchip_memory2.s1' /><slave name='intel_niosv_m_0.dm_agent' start='0x90000' end='0xA0000' type='intel_niosv_m.dm_agent' /><slave name='intel_niosv_m_0.timer_sw_agent' start='0xA0000' end='0xA0040' type='intel_niosv_m.timer_sw_agent' /><slave name='pio_datarx.s1' start='0xA0040' end='0xA0050' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xA0050' end='0xA0058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x40000' end='0x80000' type='altera_avalon_onchip_memory2.s1' /><slave name='intel_niosv_m_0.dm_agent' start='0x90000' end='0xA0000' type='intel_niosv_m.dm_agent' /><slave name='intel_niosv_m_0.timer_sw_agent' start='0xA0000' end='0xA0040' type='intel_niosv_m.timer_sw_agent' /><slave name='pio_fpga_i.s1' start='0xA0040' end='0xA0050' type='altera_avalon_pio.s1' /><slave name='pio_fpga_o.s1' start='0xA0050' end='0xA0060' type='altera_avalon_pio.s1' /><slave name='pio_datarx.s1' start='0xA0060' end='0xA0070' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xA0070' end='0xA0078' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="deviceFamily" value="Cyclone V" />
   <parameter name="enableAvalonInterface" value="true" />
   <parameter name="enableDebug" value="true" />
@@ -216,6 +258,34 @@
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="80000000" />
   <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module name="pio_fpga_i" kind="altera_avalon_pio" version="25.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="80000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module name="pio_fpga_o" kind="altera_avalon_pio" version="25.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="80000000" />
+  <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
@@ -433,7 +503,7 @@
    start="intel_niosv_m_0.data_manager"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a0050" />
+  <parameter name="baseAddress" value="0x000a0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -459,6 +529,24 @@
    version="25.1"
    start="intel_niosv_m_0.data_manager"
    end="pio_datarx.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000a0060" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="25.1"
+   start="intel_niosv_m_0.data_manager"
+   end="pio_fpga_o.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000a0050" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="25.1"
+   start="intel_niosv_m_0.data_manager"
+   end="pio_fpga_i.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x000a0040" />
   <parameter name="defaultConnection" value="false" />
@@ -509,6 +597,16 @@
    kind="clock"
    version="25.1"
    start="pll_0.outclk0"
+   end="pio_fpga_o.clk" />
+ <connection
+   kind="clock"
+   version="25.1"
+   start="pll_0.outclk0"
+   end="pio_fpga_i.clk" />
+ <connection
+   kind="clock"
+   version="25.1"
+   start="pll_0.outclk0"
    end="onchip_memory2_0.clk1" />
  <connection kind="clock" version="25.1" start="pll_0.outclk0" end="clk_0.clk_in" />
  <connection
@@ -534,6 +632,16 @@
    version="25.1"
    start="clk_0.clk_reset"
    end="pio_datarx.reset" />
+ <connection
+   kind="reset"
+   version="25.1"
+   start="clk_0.clk_reset"
+   end="pio_fpga_o.reset" />
+ <connection
+   kind="reset"
+   version="25.1"
+   start="clk_0.clk_reset"
+   end="pio_fpga_i.reset" />
  <connection
    kind="reset"
    version="25.1"
