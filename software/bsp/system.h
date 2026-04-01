@@ -4,7 +4,7 @@
  * Machine generated for CPU 'intel_niosv_m_0' in SOPC Builder design 'ccom'
  * SOPC Builder design path: ../../ccom.sopcinfo
  *
- * Generated: Thu Mar 26 21:31:04 PDT 2026
+ * Generated: Mon Mar 30 18:14:05 PDT 2026
  */
 
 /*
@@ -135,19 +135,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0xa00b0
+#define ALT_STDERR_BASE 0xa00c0
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0xa00b0
+#define ALT_STDIN_BASE 0xa00c0
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0xa00b0
+#define ALT_STDOUT_BASE 0xa00c0
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -249,7 +249,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0xa00b0
+#define JTAG_UART_0_BASE 0xa00c0
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -296,7 +296,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_0 altera_avalon_pio
-#define PIO_0_BASE 0xa00a0
+#define PIO_0_BASE 0xa00b0
 #define PIO_0_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_0_CAPTURE 0
@@ -323,7 +323,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_1 altera_avalon_pio
-#define PIO_1_BASE 0xa0090
+#define PIO_1_BASE 0xa00a0
 #define PIO_1_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_1_CAPTURE 0
@@ -350,7 +350,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_q0 altera_avalon_pio
-#define PIO_Q0_BASE 0xa0080
+#define PIO_Q0_BASE 0xa0090
 #define PIO_Q0_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_Q0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_Q0_CAPTURE 0
@@ -377,7 +377,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_q1 altera_avalon_pio
-#define PIO_Q1_BASE 0xa0050
+#define PIO_Q1_BASE 0xa0060
 #define PIO_Q1_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_Q1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_Q1_CAPTURE 0
@@ -404,7 +404,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_q2 altera_avalon_pio
-#define PIO_Q2_BASE 0xa0070
+#define PIO_Q2_BASE 0xa0080
 #define PIO_Q2_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_Q2_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_Q2_CAPTURE 0
@@ -431,7 +431,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_q3 altera_avalon_pio
-#define PIO_Q3_BASE 0xa0060
+#define PIO_Q3_BASE 0xa0070
 #define PIO_Q3_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_Q3_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_Q3_CAPTURE 0
@@ -458,7 +458,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_status altera_avalon_pio
-#define PIO_STATUS_BASE 0xa0040
+#define PIO_STATUS_BASE 0xa0050
 #define PIO_STATUS_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_STATUS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_STATUS_CAPTURE 0
@@ -477,5 +477,32 @@
 #define PIO_STATUS_RESET_VALUE 0
 #define PIO_STATUS_SPAN 16
 #define PIO_STATUS_TYPE "altera_avalon_pio"
+
+
+/*
+ * pio_stepper configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pio_stepper altera_avalon_pio
+#define PIO_STEPPER_BASE 0xa0040
+#define PIO_STEPPER_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_STEPPER_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_STEPPER_CAPTURE 0
+#define PIO_STEPPER_DATA_WIDTH 8
+#define PIO_STEPPER_DO_TEST_BENCH_WIRING 0
+#define PIO_STEPPER_DRIVEN_SIM_VALUE 0
+#define PIO_STEPPER_EDGE_TYPE "NONE"
+#define PIO_STEPPER_FREQ 80000000
+#define PIO_STEPPER_HAS_IN 0
+#define PIO_STEPPER_HAS_OUT 1
+#define PIO_STEPPER_HAS_TRI 0
+#define PIO_STEPPER_IRQ -1
+#define PIO_STEPPER_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIO_STEPPER_IRQ_TYPE "NONE"
+#define PIO_STEPPER_NAME "/dev/pio_stepper"
+#define PIO_STEPPER_RESET_VALUE 0
+#define PIO_STEPPER_SPAN 16
+#define PIO_STEPPER_TYPE "altera_avalon_pio"
 
 #endif /* __SYSTEM_H_ */
