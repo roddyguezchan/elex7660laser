@@ -33,8 +33,6 @@ int main() {
     bool pin_on = false;
     while (1) {
 
-        // Read each quadrant from its respective PIO
-        // Using IORD_ALTERA_AVALON_PIO_DATA is the safest way to access PIOs
         int q0 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q0_BASE);
         int q1 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q1_BASE);
         int q2 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q2_BASE);
