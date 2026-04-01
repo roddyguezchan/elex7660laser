@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "655536";
+         value = "655552";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "655520";
+         value = "655536";
          type = "String";
       }
    }
@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "655504";
+         value = "655520";
          type = "String";
       }
    }
@@ -122,7 +122,7 @@
       }
       datum baseAddress
       {
-         value = "655488";
+         value = "655504";
          type = "String";
       }
    }
@@ -138,7 +138,7 @@
    {
       datum baseAddress
       {
-         value = "655440";
+         value = "655456";
          type = "String";
       }
    }
@@ -154,7 +154,7 @@
    {
       datum baseAddress
       {
-         value = "655472";
+         value = "655488";
          type = "String";
       }
    }
@@ -170,7 +170,7 @@
    {
       datum baseAddress
       {
-         value = "655456";
+         value = "655472";
          type = "String";
       }
    }
@@ -183,6 +183,22 @@
       }
    }
    element pio_status.s1
+   {
+      datum baseAddress
+      {
+         value = "655440";
+         type = "String";
+      }
+   }
+   element pio_stepper
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element pio_stepper.s1
    {
       datum baseAddress
       {
@@ -256,6 +272,11 @@
    internal="pio_status.external_connection"
    type="conduit"
    dir="end" />
+ <interface
+   name="stepper"
+   internal="pio_stepper.external_connection"
+   type="conduit"
+   dir="end" />
  <module name="clk_0" kind="clock_source" version="25.1" enabled="1">
   <parameter name="clockFrequency" value="85000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -273,7 +294,7 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="AUTO_PLATFORM_IRQ_RX_INTERRUPTS_USED" value="1" />
   <parameter name="clockFrequency" value="80000000" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x40000' end='0x80000' type='altera_avalon_onchip_memory2.s1' /><slave name='intel_niosv_m_0.dm_agent' start='0x90000' end='0xA0000' type='intel_niosv_m.dm_agent' /><slave name='intel_niosv_m_0.timer_sw_agent' start='0xA0000' end='0xA0040' type='intel_niosv_m.timer_sw_agent' /><slave name='pio_status.s1' start='0xA0040' end='0xA0050' type='altera_avalon_pio.s1' /><slave name='pio_q1.s1' start='0xA0050' end='0xA0060' type='altera_avalon_pio.s1' /><slave name='pio_q3.s1' start='0xA0060' end='0xA0070' type='altera_avalon_pio.s1' /><slave name='pio_q2.s1' start='0xA0070' end='0xA0080' type='altera_avalon_pio.s1' /><slave name='pio_q0.s1' start='0xA0080' end='0xA0090' type='altera_avalon_pio.s1' /><slave name='pio_1.s1' start='0xA0090' end='0xA00A0' type='altera_avalon_pio.s1' /><slave name='pio_0.s1' start='0xA00A0' end='0xA00B0' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xA00B0' end='0xA00B8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x40000' end='0x80000' type='altera_avalon_onchip_memory2.s1' /><slave name='intel_niosv_m_0.dm_agent' start='0x90000' end='0xA0000' type='intel_niosv_m.dm_agent' /><slave name='intel_niosv_m_0.timer_sw_agent' start='0xA0000' end='0xA0040' type='intel_niosv_m.timer_sw_agent' /><slave name='pio_stepper.s1' start='0xA0040' end='0xA0050' type='altera_avalon_pio.s1' /><slave name='pio_status.s1' start='0xA0050' end='0xA0060' type='altera_avalon_pio.s1' /><slave name='pio_q1.s1' start='0xA0060' end='0xA0070' type='altera_avalon_pio.s1' /><slave name='pio_q3.s1' start='0xA0070' end='0xA0080' type='altera_avalon_pio.s1' /><slave name='pio_q2.s1' start='0xA0080' end='0xA0090' type='altera_avalon_pio.s1' /><slave name='pio_q0.s1' start='0xA0090' end='0xA00A0' type='altera_avalon_pio.s1' /><slave name='pio_1.s1' start='0xA00A0' end='0xA00B0' type='altera_avalon_pio.s1' /><slave name='pio_0.s1' start='0xA00B0' end='0xA00C0' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xA00C0' end='0xA00C8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="deviceFamily" value="Cyclone V" />
   <parameter name="enableAvalonInterface" value="true" />
   <parameter name="enableDebug" value="true" />
@@ -438,6 +459,24 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="12" />
+ </module>
+ <module
+   name="pio_stepper"
+   kind="altera_avalon_pio"
+   version="25.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="80000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
  </module>
  <module name="pll_0" kind="altera_pll" version="25.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
@@ -648,7 +687,7 @@
    start="intel_niosv_m_0.data_manager"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a00b0" />
+  <parameter name="baseAddress" value="0x000a00c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -675,7 +714,7 @@
    start="intel_niosv_m_0.data_manager"
    end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a00a0" />
+  <parameter name="baseAddress" value="0x000a00b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -684,7 +723,7 @@
    start="intel_niosv_m_0.data_manager"
    end="pio_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a0090" />
+  <parameter name="baseAddress" value="0x000a00a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -693,7 +732,7 @@
    start="intel_niosv_m_0.data_manager"
    end="pio_q0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a0080" />
+  <parameter name="baseAddress" value="0x000a0090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -702,7 +741,7 @@
    start="intel_niosv_m_0.data_manager"
    end="pio_q2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a0070" />
+  <parameter name="baseAddress" value="0x000a0080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -711,7 +750,7 @@
    start="intel_niosv_m_0.data_manager"
    end="pio_q3.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a0060" />
+  <parameter name="baseAddress" value="0x000a0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -720,7 +759,7 @@
    start="intel_niosv_m_0.data_manager"
    end="pio_q1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000a0050" />
+  <parameter name="baseAddress" value="0x000a0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -728,6 +767,15 @@
    version="25.1"
    start="intel_niosv_m_0.data_manager"
    end="pio_status.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000a0050" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="25.1"
+   start="intel_niosv_m_0.data_manager"
+   end="pio_stepper.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x000a0040" />
   <parameter name="defaultConnection" value="false" />
@@ -784,6 +832,11 @@
    kind="clock"
    version="25.1"
    start="pll_0.outclk0"
+   end="pio_stepper.clk" />
+ <connection
+   kind="clock"
+   version="25.1"
+   start="pll_0.outclk0"
    end="onchip_memory2_0.clk1" />
  <connection kind="clock" version="25.1" start="pll_0.outclk0" end="clk_0.clk_in" />
  <connection
@@ -831,6 +884,11 @@
    version="25.1"
    start="clk_0.clk_reset"
    end="pio_status.reset" />
+ <connection
+   kind="reset"
+   version="25.1"
+   start="clk_0.clk_reset"
+   end="pio_stepper.reset" />
  <connection
    kind="reset"
    version="25.1"

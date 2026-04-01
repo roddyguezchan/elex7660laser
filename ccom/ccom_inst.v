@@ -7,6 +7,7 @@
 		.q2_data_export    (<connected-to-q2_data_export>),    //    q2_data.export
 		.q3_data_export    (<connected-to-q3_data_export>),    //    q3_data.export
 		.reset_n_reset_n   (<connected-to-reset_n_reset_n>),   //    reset_n.reset_n
-		.status_export     (<connected-to-status_export>)      //     status.export
+		.status_export     (<connected-to-status_export>),     //     status.export
+		.stepper_export    (<connected-to-stepper_export>)     //    stepper.export
 	);
 

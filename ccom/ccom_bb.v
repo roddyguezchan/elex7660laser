@@ -8,7 +8,8 @@ module ccom (
 	q2_data_export,
 	q3_data_export,
 	reset_n_reset_n,
-	status_export);	
+	status_export,
+	stepper_export);	
 
 	input		button_pio_export;
 	input		clk50_clk;
@@ -19,4 +20,5 @@ module ccom (
 	input	[11:0]	q3_data_export;
 	input		reset_n_reset_n;
 	input	[11:0]	status_export;
+	output	[7:0]	stepper_export;
 endmodule
