@@ -13,6 +13,7 @@ module laser_top
 	// ADC samples
 	logic [11:0] q0, q1, q2, q3;
 	logic [5:0] status_sig;
+	logic cyawstep, cyawdir, cpitchstep, cpitchdir;
    
 	// ADC QPD scanner module
 	adc_qpd_scanner qpd_inst(
@@ -37,27 +38,39 @@ module laser_top
 		.q1_data_export(q1),
 		.q2_data_export(q2),
 		.q3_data_export(q3),
-		.status_export({ 6'b100000, status_sig })
+		.status_export({ 8'b100000, GPIO_0[3:0] }),
+		.stepper_export({4'b0, cpitchdir, cpitchstep, cyawdir, cyawstep})
 	);
 	
-	gimbal gimbal0(
-		.clk(clk),
-		.reset(KEY[1]),
-		.tr(q0),
-		.br(q1),
-		.bl(q1),
-		.tl(q3),
+	driver simpledriver(
+		.clk(clk50),
+		.yaw_step_en(cyawstep),
+		.pitch_step_en(cpitchstep),
 		.yaw_step(GPIO_0[0]),
-		.yaw_dir(GPIO_0[1]),
-		.pitch_step(GPIO_0[2]),
-		.pitch_dir(GPIO_0[3]),
-		.max_disp(status_sig[0]),
-		.idle(status_sig[1]),
-		.left(status_sig[2]),
-		.right(status_sig[3]),
-		.up(status_sig[4]),
-		.down(status_sig[5]),
+		.pitch_step(GPIO_0[2])
 	);
+	
+	assign GPIO_0[1] = cyawdir;
+	assign GPIO_0[3] = cpitchdir;
+	
+//	gimbal gimbal0(
+//		.clk(clk),
+//		.reset(KEY[1]),
+//		.tr(q0),
+//		.br(q1),
+//		.bl(q1),
+//		.tl(q3),
+//		.yaw_step(GPIO_0[0]),
+//		.yaw_dir(GPIO_0[1]),
+//		.pitch_step(GPIO_0[2]),
+//		.pitch_dir(GPIO_0[3]),
+//		.max_disp(status_sig[0]),
+//		.idle(status_sig[1]),
+//		.left(status_sig[2]),
+//		.right(status_sig[3]),
+//		.up(status_sig[4]),
+//		.down(status_sig[5]),
+//	);
 	
 	
 endmodule
