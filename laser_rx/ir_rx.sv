@@ -23,6 +23,7 @@ module ir_rx(
 
 	// Timing constants for 50MHz clock (1 tick = 20ns)
 	localparam TICK_1_1MS = 55_000; // average of 0 and 1 space time
+	localparam TICK_TIMEOUT = 18'h3FFFF;
 	// Define tolerances (approx +/- 10%)
 	localparam BURST_MIN = 400_000; // 8ms
 	localparam BURST_MAX = 500_000; // 10ms
@@ -54,9 +55,10 @@ module ir_rx(
 			IDLE : begin
 				if ( falling ) begin
 					tick_count <= 0;
-					
+					done <= 0;
+					recv <= 1;
 					state <= HEADER_BURST;
-				end
+				end else recv <= 0;
 			end
 			
 			HEADER_BURST: begin
@@ -66,7 +68,7 @@ module ir_rx(
                     tick_count <= 0;
                     state <= HEADER_SPACE;
                 end else state <= IDLE;
-            end
+            end else if (tick_count >= TICK_TIMEOUT) state <= IDLE;
         end
 
         HEADER_SPACE: begin
@@ -77,14 +79,14 @@ module ir_rx(
                     bit_count <= 0;
                     state <= DATA_BURST; // Valid header! Start receiving bits.
                 end else state <= IDLE;
-            end
+            end else if (tick_count >= TICK_TIMEOUT) state <= IDLE;
         end
 			
 			DATA_BURST : begin
 				if ( rising ) begin
 					tick_count <= 0;
 					state <= DATA_SPACE;
-				end
+				end else if (tick_count >= TICK_TIMEOUT) state <= IDLE;
 			end
 			
 			DATA_SPACE : begin
@@ -97,7 +99,7 @@ module ir_rx(
 						bit_count <= bit_count + 1'b1;
 						state <= DATA_BURST;
 					end
-				end
+				end else if (tick_count >= TICK_TIMEOUT) state <= IDLE;
 			end
 			
 			VALIDATE : begin
