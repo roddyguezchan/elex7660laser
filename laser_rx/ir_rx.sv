@@ -42,8 +42,9 @@ module ir_rx(
 		ir_prev <= ir_sync;
 	end
 	
-	logic falling = ir_prev == 1 && ir_sync == 0;
-	logic rising = ir_prev == 0 && ir_sync == 1;
+	logic falling, rising;
+	assign falling = ir_prev == 1 && ir_sync == 0;
+	assign rising = ir_prev == 0 && ir_sync == 1;
 	
 	// State machine
 	logic [19:0] tick_count;

@@ -78,7 +78,7 @@ module ir_tx(
 				message <= 1;
 				if ( tick_count >= TICK_562_5US ) begin
 					tick_count <= 0;
-					state <= DATA_SPACE
+					state <= DATA_SPACE;
 				end
 			end
 			
@@ -102,8 +102,8 @@ module ir_tx(
 			DATA_BURST_INV : begin
 				message <= 1;
 				if ( tick_count >= TICK_562_5US ) begin
-					tick_count >= 0;
-					state <= DATA_SPACE_INV
+					tick_count <= 0;
+					state <= DATA_SPACE_INV;
 				end
 			end
 			
@@ -143,16 +143,16 @@ module ir_tx(
 		
 			// Decide whether the inverted data still needs to be sent or go to EOF
 			if ( data_sent ) begin
-				state <= EOF;
+				state = EOF;
 			end else begin
-				bit_count <= BIT_COUNT_RESET_VAL;
-				data_sent <= 1'b1; // since the actual data has been sent, set this high
-				state <= DATA_BURST_INV;
+				bit_count = BIT_COUNT_RESET_VAL;
+				data_sent = 1'b1; // since the actual data has been sent, set this high
+				state = DATA_BURST_INV;
 			end
 		
 		end else begin
-			bit_count <= bit_count - 1'b1;
-			state <= data_sent ? DATA_BURST_INV : DATA_BURST;
+			bit_count = bit_count - 1'b1;
+			state = data_sent ? DATA_BURST_INV : DATA_BURST;
 		end
 	endfunction
 endmodule
