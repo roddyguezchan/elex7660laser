@@ -22,7 +22,9 @@ juart-terminal
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
 
-#define THRESHHOLD 100
+#define THRESHHOLD 0.15f
+void head();
+float absfl(float num);
 
 int main() {
     printf("QPD ADC VALUES.....\n");
@@ -39,21 +41,26 @@ int main() {
         int q3 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q3_BASE);
         int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_STATUS_BASE);
 
-        float dx = ((q0 + q1) - (q3 + q2)) / (q0 + q1 + q2 + q3);
-		float dy = ((q0 + q3) - (q1 + q2)) / (q0 + q1 + q2 + q3);
+        int sum = q0+q1+q2+q3;
+
+        float dx = (float)((q0 + q1) - (q3 + q2)) / (float)(q0 + q1 + q2 + q3);
+		float dy = (float)((q0 + q3) - (q1 + q2)) / (float)(q0 + q1 + q2 + q3);
 
 		int wr = 0;
-
-		if ( abs(dx) > THRESHHOLD )
+		if(sum > 4000)
 		{
-			wr |= 0b1;
-			if (dx > 0) wr |= 0b10;
-		}
+			if ( absfl(dx) > THRESHHOLD )
+			{
+				wr |= 0b100;
+				if (dx > 0) wr |= 0b1000;
+			}
 
-		if ( abs(dy) > THRESHHOLD )
-		{
-			wr |= 0b100;
-			if (dx > 0) wr |= 0b1000;
+			if ( absfl(dy) > THRESHHOLD )
+			{
+				wr |= 0b1;
+				if (dy < 0) wr |= 0b10;
+			}
+
 		}
 
 		IOWR_ALTERA_AVALON_PIO_DATA(PIO_STEPPER_BASE, wr);
@@ -61,7 +68,7 @@ int main() {
 		// Print values on one line.
 		// %4d ensures the numbers don't "jump" around if they change digits.
 		// \r returns the cursor to the start of the line.
-		printf(" %4d   |  %4d   |  %4d   |  %4d   |   %1d   |  %1d  |  %1d  |  %1d  |  %1.4f  |  %1.4f  | %4d \n", q0, q1, q2, q3, status&1, (status>>1)&1, (status>>2)&1, (status>>3)&1, dx, dy, status);
+		printf(" %4d   |  %4d   |  %4d   |  %4d   |   %1d   |  %1d  |  %1d  |  %1d  |  %0.4f  |  %0.4f  | %4d \n", q0, q1, q2, q3, status&1, (status>>1)&1, (status>>2)&1, (status>>3)&1, dx, dy, sum);
 
 		// Flush the output to ensure it updates immediately in RiscFree
 		fflush(stdout);
@@ -94,4 +101,10 @@ void head()
 {
 	printf("Q0 (TR) | Q1 (BR) | Q2 (BL) | Q3 (TL) | MDisp | Idle | Left | Right | Up | Down | RAW \n");
 	printf("--------------------------------------\n");
+}
+
+float absfl(float num)
+{
+	if(num > 0.0f) return num;
+	else return -1.0f * num;
 }
