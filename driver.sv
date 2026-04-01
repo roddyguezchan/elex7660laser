@@ -6,7 +6,7 @@ module driver
 );
 
 	logic clk0;
-	clkdiv #(50_000_000, 1000) c0 (clk, clk0);
+	clkdiv #(50_000_000, 10) c0 (clk, clk0);
 
 	always_ff @(posedge clk0) begin
 		yaw_step <= yaw_step_en ? !yaw_step : 1'b1;
