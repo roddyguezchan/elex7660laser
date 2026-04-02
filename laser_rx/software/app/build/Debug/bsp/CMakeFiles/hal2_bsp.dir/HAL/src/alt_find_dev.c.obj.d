@@ -1,0 +1,32 @@
+bsp/CMakeFiles/hal2_bsp.dir/HAL/src/alt_find_dev.c.obj: \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/src/alt_find_dev.c \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/stdio.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_ansi.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/newlib.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_newlib_version.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/config.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/ieeefp.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/features.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/cdefs.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_default_types.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stdarg.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/reent.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_ansi.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_types.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_types.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/lock.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/stdio.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/string.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_locale.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/strings.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/string.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_dev.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/./system.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/./linker.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_llist.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/alt_types.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/priv/alt_dev_llist.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/priv/alt_file.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/os/alt_sem.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/priv/alt_no_error.h

@@ -1,0 +1,386 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    message: |
+      The target system is: Generic -  - Nios V/m
+      The host system is: Linux - 6.8.0-106-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/3.31.1/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-g++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/3.31.1/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ"
+      binary: "/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ'
+        
+        Run Build Command(s): /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_603ee/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_603ee.dir/build.make CMakeFiles/cmTC_603ee.dir/build
+        gmake[1]: Entering directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ'
+        Building C object CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj
+        /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc   -v -o CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj -c /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc
+        Target: riscv32-unknown-elf
+        Configured with: ../../gcc/configure --target=riscv32-unknown-elf --prefix=/build/install --with-sysroot=/build/install/riscv32-unknown-elf --with-native-system-header-dir=/include --with-newlib --disable-shared --enable-languages=c,c++ --enable-tls --disable-werror --disable-libmudflap --disable-libssp --disable-quadmath --disable-libgomp --disable-nls --disable-bootstrap --enable-multilib --with-isa-spec=2.2 --with-multilib-generator='rv32e-ilp32e--zicbom rv32ea-ilp32e--zicbom rv32im-ilp32--zicbom rv32ia-ilp32--zicbom rv32ima-ilp32--zicbom rv32imf-ilp32--zicbom rv32imf-ilp32f--zicbom rv32imaf-ilp32--zicbom rv32imaf-ilp32f--zicbom rv64ima-lp64--zicbom rv64imaf-lp64--zicbom rv64imaf-lp64f--zicbom' --with-arch=rv32i --with-abi=ilp32 --with-zstd=no --with-system-zlib --enable-libstdcxx-pch=no --disable-werror
+        Thread model: single
+        Supported LTO compression algorithms: zlib
+        gcc version 13.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_603ee.dir/'
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/cc1 -quiet -v -imultilib . -iprefix /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/ -isysroot /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_603ee.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -march=rv32i -mabi=ilp32 -misa-spec=2.2 -march=rv32i -version -o /tmp/ccedpgJl.s
+        GNU C17 (GCC) version 13.2.0 (riscv32-unknown-elf)
+        	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3), GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        warning: GMP header version 6.2.1 differs from library version 6.2.1.fix1.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include"
+        ignoring nonexistent directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/usr/local/include"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include
+        End of search list.
+        Compiler executable checksum: 36c165f0b8979f7845c1f97495d4f685
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_603ee.dir/'
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/as -v --traditional-format -march=rv32i -march=rv32i -mabi=ilp32 -misa-spec=2.2 -o CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj /tmp/ccedpgJl.s
+        GNU assembler version 2.40.90 (riscv32-unknown-elf) using BFD version (GNU Binutils) 2.40.90.20230730
+        COMPILER_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/
+        LIBRARY_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/lib/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.'
+        Linking C static library libcmTC_603ee.a
+        /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -P CMakeFiles/cmTC_603ee.dir/cmake_clean_target.cmake
+        /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_603ee.dir/link.txt --verbose=1
+        riscv32-unknown-elf-ar qc libcmTC_603ee.a CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj
+        /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ranlib libcmTC_603ee.a
+        gmake[1]: Leaving directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include]
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed]
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include]
+        end of search list found
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include]
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed]
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include]
+        implicit include dirs: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_603ee/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_603ee.dir/build.make CMakeFiles/cmTC_603ee.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ']
+        ignore line: [Building C object CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc   -v -o CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj -c /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc]
+        ignore line: [Target: riscv32-unknown-elf]
+        ignore line: [Configured with: ../../gcc/configure --target=riscv32-unknown-elf --prefix=/build/install --with-sysroot=/build/install/riscv32-unknown-elf --with-native-system-header-dir=/include --with-newlib --disable-shared --enable-languages=c c++ --enable-tls --disable-werror --disable-libmudflap --disable-libssp --disable-quadmath --disable-libgomp --disable-nls --disable-bootstrap --enable-multilib --with-isa-spec=2.2 --with-multilib-generator='rv32e-ilp32e--zicbom rv32ea-ilp32e--zicbom rv32im-ilp32--zicbom rv32ia-ilp32--zicbom rv32ima-ilp32--zicbom rv32imf-ilp32--zicbom rv32imf-ilp32f--zicbom rv32imaf-ilp32--zicbom rv32imaf-ilp32f--zicbom rv64ima-lp64--zicbom rv64imaf-lp64--zicbom rv64imaf-lp64f--zicbom' --with-arch=rv32i --with-abi=ilp32 --with-zstd=no --with-system-zlib --enable-libstdcxx-pch=no --disable-werror]
+        ignore line: [Thread model: single]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_603ee.dir/']
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/cc1 -quiet -v -imultilib . -iprefix /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/ -isysroot /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_603ee.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -march=rv32i -mabi=ilp32 -misa-spec=2.2 -march=rv32i -version -o /tmp/ccedpgJl.s]
+        ignore line: [GNU C17 (GCC) version 13.2.0 (riscv32-unknown-elf)]
+        ignore line: [	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3)  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [warning: GMP header version 6.2.1 differs from library version 6.2.1.fix1.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 36c165f0b8979f7845c1f97495d4f685]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_603ee.dir/']
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/as -v --traditional-format -march=rv32i -march=rv32i -mabi=ilp32 -misa-spec=2.2 -o CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj /tmp/ccedpgJl.s]
+        ignore line: [GNU assembler version 2.40.90 (riscv32-unknown-elf) using BFD version (GNU Binutils) 2.40.90.20230730]
+        ignore line: [COMPILER_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/]
+        ignore line: [LIBRARY_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/lib/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C static library libcmTC_603ee.a]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -P CMakeFiles/cmTC_603ee.dir/cmake_clean_target.cmake]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_603ee.dir/link.txt --verbose=1]
+        ignore line: [riscv32-unknown-elf-ar qc libcmTC_603ee.a CMakeFiles/cmTC_603ee.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ranlib libcmTC_603ee.a]
+        ignore line: [gmake[1]: Leaving directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-SjZfrJ']
+        ignore line: []
+        ignore line: []
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO"
+      binary: "/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO'
+        
+        Run Build Command(s): /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4f436/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4f436.dir/build.make CMakeFiles/cmTC_4f436.dir/build
+        gmake[1]: Entering directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO'
+        Building CXX object CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj
+        /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-g++   -v -o CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj -c /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-g++
+        Target: riscv32-unknown-elf
+        Configured with: ../../gcc/configure --target=riscv32-unknown-elf --prefix=/build/install --with-sysroot=/build/install/riscv32-unknown-elf --with-native-system-header-dir=/include --with-newlib --disable-shared --enable-languages=c,c++ --enable-tls --disable-werror --disable-libmudflap --disable-libssp --disable-quadmath --disable-libgomp --disable-nls --disable-bootstrap --enable-multilib --with-isa-spec=2.2 --with-multilib-generator='rv32e-ilp32e--zicbom rv32ea-ilp32e--zicbom rv32im-ilp32--zicbom rv32ia-ilp32--zicbom rv32ima-ilp32--zicbom rv32imf-ilp32--zicbom rv32imf-ilp32f--zicbom rv32imaf-ilp32--zicbom rv32imaf-ilp32f--zicbom rv64ima-lp64--zicbom rv64imaf-lp64--zicbom rv64imaf-lp64f--zicbom' --with-arch=rv32i --with-abi=ilp32 --with-zstd=no --with-system-zlib --enable-libstdcxx-pch=no --disable-werror
+        Thread model: single
+        Supported LTO compression algorithms: zlib
+        gcc version 13.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_4f436.dir/'
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/cc1plus -quiet -v -imultilib . -iprefix /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/ -isysroot /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4f436.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=rv32i -mabi=ilp32 -misa-spec=2.2 -march=rv32i -version -o /tmp/cc2PQwVE.s
+        GNU C++17 (GCC) version 13.2.0 (riscv32-unknown-elf)
+        	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3), GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        warning: GMP header version 6.2.1 differs from library version 6.2.1.fix1.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf/."
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/backward"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include"
+        ignoring nonexistent directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/usr/local/include"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include"
+        ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf/.
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/backward
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include
+        End of search list.
+        Compiler executable checksum: d25b0579c2889d3121af47bd6e3da33d
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_4f436.dir/'
+         /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/as -v --traditional-format -march=rv32i -march=rv32i -mabi=ilp32 -misa-spec=2.2 -o CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cc2PQwVE.s
+        GNU assembler version 2.40.90 (riscv32-unknown-elf) using BFD version (GNU Binutils) 2.40.90.20230730
+        COMPILER_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/
+        LIBRARY_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/lib/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX static library libcmTC_4f436.a
+        /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -P CMakeFiles/cmTC_4f436.dir/cmake_clean_target.cmake
+        /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f436.dir/link.txt --verbose=1
+        riscv32-unknown-elf-ar qc libcmTC_4f436.a CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj
+        /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ranlib libcmTC_4f436.a
+        gmake[1]: Leaving directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0]
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf/.]
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/backward]
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include]
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed]
+          add: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include]
+        end of search list found
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/c++/13.2.0]
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf/.] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf]
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/backward] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/c++/13.2.0/backward]
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include]
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed]
+        collapse include dir [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include] ==> [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include]
+        implicit include dirs: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/c++/13.2.0;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/c++/13.2.0/backward;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:5 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4f436/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_4f436.dir/build.make CMakeFiles/cmTC_4f436.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO']
+        ignore line: [Building CXX object CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-g++   -v -o CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj -c /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-g++]
+        ignore line: [Target: riscv32-unknown-elf]
+        ignore line: [Configured with: ../../gcc/configure --target=riscv32-unknown-elf --prefix=/build/install --with-sysroot=/build/install/riscv32-unknown-elf --with-native-system-header-dir=/include --with-newlib --disable-shared --enable-languages=c c++ --enable-tls --disable-werror --disable-libmudflap --disable-libssp --disable-quadmath --disable-libgomp --disable-nls --disable-bootstrap --enable-multilib --with-isa-spec=2.2 --with-multilib-generator='rv32e-ilp32e--zicbom rv32ea-ilp32e--zicbom rv32im-ilp32--zicbom rv32ia-ilp32--zicbom rv32ima-ilp32--zicbom rv32imf-ilp32--zicbom rv32imf-ilp32f--zicbom rv32imaf-ilp32--zicbom rv32imaf-ilp32f--zicbom rv64ima-lp64--zicbom rv64imaf-lp64--zicbom rv64imaf-lp64f--zicbom' --with-arch=rv32i --with-abi=ilp32 --with-zstd=no --with-system-zlib --enable-libstdcxx-pch=no --disable-werror]
+        ignore line: [Thread model: single]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_4f436.dir/']
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/cc1plus -quiet -v -imultilib . -iprefix /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/ -isysroot /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4f436.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=rv32i -mabi=ilp32 -misa-spec=2.2 -march=rv32i -version -o /tmp/cc2PQwVE.s]
+        ignore line: [GNU C++17 (GCC) version 13.2.0 (riscv32-unknown-elf)]
+        ignore line: [	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3)  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [warning: GMP header version 6.2.1 differs from library version 6.2.1.fix1.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf/."]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/backward"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/../../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include"]
+        ignore line: [ignoring duplicate directory "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/riscv32-unknown-elf/.]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include/c++/13.2.0/backward]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed]
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: d25b0579c2889d3121af47bd6e3da33d]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_4f436.dir/']
+        ignore line: [ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/as -v --traditional-format -march=rv32i -march=rv32i -mabi=ilp32 -misa-spec=2.2 -o CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cc2PQwVE.s]
+        ignore line: [GNU assembler version 2.40.90 (riscv32-unknown-elf) using BFD version (GNU Binutils) 2.40.90.20230730]
+        ignore line: [COMPILER_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../libexec/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/bin/]
+        ignore line: [LIBRARY_PATH=/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../lib/gcc/riscv32-unknown-elf/13.2.0/../../../../riscv32-unknown-elf/lib/:/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/../riscv32-unknown-elf/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32i' '-mabi=ilp32' '-misa-spec=2.2' '-march=rv32i' '-dumpdir' 'CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX static library libcmTC_4f436.a]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -P CMakeFiles/cmTC_4f436.dir/cmake_clean_target.cmake]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f436.dir/link.txt --verbose=1]
+        ignore line: [riscv32-unknown-elf-ar qc libcmTC_4f436.a CMakeFiles/cmTC_4f436.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ranlib libcmTC_4f436.a]
+        ignore line: [gmake[1]: Leaving directory '/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/CMakeScratch/TryCompile-vTAHhO']
+        ignore line: []
+        ignore line: []
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
+      - "/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/raf/src/elex7660laser/laser_rx/software/bsp/CMakeLists.txt:7 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      riscv32-unknown-elf-gcc (GCC) 13.2.0
+      Copyright (C) 2023 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+...
