@@ -2,7 +2,7 @@ set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_TOOL_NAME "Q
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_TOOL_VERSION "25.1"
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "ccom_rx" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../ccom_rx.sopcinfo"]
-set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name SLD_INFO "QSYS_NAME ccom_rx HAS_SOPCINFO 1 GENERATION_ID 1775072806"
+set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name SLD_INFO "QSYS_NAME ccom_rx HAS_SOPCINFO 1 GENERATION_ID 1775113296"
 set_global_assignment -library "ccom_rx" -name MISC_FILE [file join $::quartus(qip_path) "../ccom_rx.cmp"]
 set_global_assignment -library "ccom_rx" -name SLD_FILE [file join $::quartus(qip_path) "ccom_rx.regmap"]
 set_global_assignment -library "ccom_rx" -name SLD_FILE [file join $::quartus(qip_path) "ccom_rx.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_DI
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc3NTA3MjgwNg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc3NTExMzI5Ng==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNFUyM0M2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "ccom_rx" -library "ccom_rx" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
