@@ -1,7 +1,7 @@
 module laser_rx(
 	input logic clk50,
 	input  logic [1:0] KEY, // onboard FPGA dev board buttons
-	output logic [2:0] GPIO_0, // 0 used for transmitter
+	output logic [3:0] GPIO_0, // 0 used for transmitter
 	input logic [1:0] GPIO_1, // 0 used for receiver
 	output logic [7:0] LED
 );
@@ -9,10 +9,13 @@ module laser_rx(
 localparam DATA_TBS = 8'b0101_1001;
 
 logic txstart, txdone, rxrecv, rxdone;
+logic baseband_out;
 logic [7:0] data_received;
 logic [2:0] txstate;
 
 assign LED = data_received;
+assign GPIO_1[2] = baseband_out;
+assign GPIO_1[3] = ~baseband_out;
 
 ccom_rx nios_system(
 	.clk50_clk(clk50),
@@ -30,7 +33,7 @@ ir_tx transmitter(
 	.data(DATA_TBS),
 	.ir_out(GPIO_0[0]),
 	.carrier_out(GPIO_0[1]),
-	.baseband_out(GPIO_0[2]),
+	.baseband_out(baseband_out),
 	.state_out(txstate)
 );
 
