@@ -17,6 +17,7 @@
 module ir_rx(
 	input logic clk50,
 	input logic ir_input,
+	input logic reset,
 	output logic recv, done,
 	output logic [7:0] data
 );
@@ -52,6 +53,9 @@ module ir_rx(
 	logic [15:0] shift_reg; // 8 data + 8 data inv
 	
 	always_ff @(posedge clk50) begin
+		if ( reset ) begin
+			state <= IDLE;
+		end else 		
 		case ( state )
 			IDLE : begin
 				if ( falling ) begin
@@ -111,7 +115,6 @@ module ir_rx(
 				
 				state <= IDLE;
 			end
-			
 		endcase
 	end
 endmodule

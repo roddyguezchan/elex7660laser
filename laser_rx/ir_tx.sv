@@ -15,7 +15,10 @@ module ir_tx(
 	
 	input logic [7:0] data,
 	
-	output logic ir_out
+	output logic ir_out,
+	output logic carrier_out,
+	output logic baseband_out,
+	output logic [3:0] state_out
 );
 	// Timing constants for 50MHz clock (1 tick = 20ns)
 	localparam BIT_COUNT_RESET_VAL = 3'b111;
@@ -27,21 +30,57 @@ module ir_tx(
 	// Generate carrier frequency
 	logic carrier;
 	clkdiv #(50_000_000, 38_000) c0 (clk50, carrier);
+	assign carrier_out = carrier;
+	assign baseband_out = message;
 	
 	// Transmitter protocol state machine
-	typedef enum { IDLE, HEADER_BURST, HEADER_SPACE, DATA_BURST, DATA_SPACE, DATA_BURST_INV, DATA_SPACE_INV, EOF} state_t;
+	typedef enum logic [3:0] { 
+		IDLE = 4'd0,
+		HEADER_BURST = 4'd1,
+		HEADER_SPACE = 4'd2, 
+		DATA_BURST = 4'd3, 
+		DATA_SPACE = 4'd4, 
+		DATA_BURST_INV = 4'd5, 
+		DATA_SPACE_INV = 4'd6, 
+		EOF  = 4'd7,
+		WAIT  = 4'd8
+		} state_t;
 	state_t state;
+	assign state_out = state_t'(state);
+	
+	task next_bit_logic;
+		tick_count <= 0;
+		if (bit_count == 0) begin
+			if (data_sent) begin
+					state <= EOF;
+			end else begin
+					bit_count <= BIT_COUNT_RESET_VAL;
+					data_sent <= 1'b1;
+					state <= DATA_BURST_INV;
+			end
+		end else begin
+			bit_count <= bit_count - 1'b1;
+			state <= data_sent ? DATA_BURST_INV : DATA_BURST;
+		end
+	endtask
 	
 	logic [7:0] data_out; // A copy of the data to be written, set at start
 	
 	logic message; // The signal that will be modulated with the carrier
 	
 	logic [2:0] bit_count; // Stores the bit position
-	logic data_sent;
+   logic data_sent;
+
 	logic [19:0] tick_count;
 	
 	always_ff @(posedge clk50) begin
-		case (state)
+		if ( reset ) begin
+			state <= IDLE;
+			tick_count <= 0;
+			done <= 0;
+			data_sent <= 0;
+		end else case (state)
+		default : state <= IDLE;
 		
 		// IDLE STATE
 			IDLE : begin
@@ -51,6 +90,7 @@ module ir_tx(
 					data_out <= data;
 					data_sent <= 0;
 					done <= 0;
+					tick_count <= 0;
 					state <= HEADER_BURST;
 				end
 			end
@@ -79,7 +119,7 @@ module ir_tx(
 				if ( tick_count >= TICK_562_5US ) begin
 					tick_count <= 0;
 					state <= DATA_SPACE;
-				end
+				end else tick_count <= tick_count + 1'b1;
 			end
 			
 		// DATA STATE
@@ -88,12 +128,12 @@ module ir_tx(
 				if( data_out[bit_count] == 1'b1 ) begin
 					if (tick_count >= TICK_1_6875MS ) begin
 						tick_count <= 0;
-						next_bit();
+						next_bit_logic();
 					end else tick_count <= tick_count + 1'b1;
 				end else begin // if the current bit is a 0
 					if ( tick_count >= TICK_562_5US ) begin
 						tick_count <= 0;
-						next_bit();
+						next_bit_logic();
 					end else tick_count <= tick_count + 1'b1;
 				end
 			end
@@ -104,33 +144,42 @@ module ir_tx(
 				if ( tick_count >= TICK_562_5US ) begin
 					tick_count <= 0;
 					state <= DATA_SPACE_INV;
-				end
+				end else tick_count <= tick_count + 1'b1;
 			end
 			
 		// DATA SPACE INVERTED
 			DATA_SPACE_INV : begin
 				message <= 0;
-				if( data_out[bit_count] == 1'b0 ) begin
+				if( ~data_out[bit_count] == 1'b1 ) begin
 					if (tick_count >= TICK_1_6875MS ) begin
 						tick_count <= 0;
-						next_bit();
+						next_bit_logic();
 					end else tick_count <= tick_count + 1'b1;
 				end else begin // if the inverse of the current bit is a 1
 					if ( tick_count >= TICK_562_5US ) begin
 						tick_count <= 0;
-						next_bit();
+						next_bit_logic();
 					end else tick_count <= tick_count + 1'b1;
 				end
 			end
 			
-		// EOF
+		
 			EOF : begin
 				message <= 1;
 				if ( tick_count >= TICK_562_5US ) begin
 					tick_count <= 0;
-					done <= 1'b1;
+					done <= 1;
+					if ( start ) state <= WAIT;
+					else state <= IDLE;
+				end else tick_count <= tick_count + 1'b1;
+			end
+
+			WAIT : begin
+				message <= 0;
+				if ( tick_count >= TICK_9MS ) begin
+					tick_count <= 0;
 					state <= IDLE;
-				end
+				end else tick_count <= tick_count + 1'b1;
 			end
 			
 		endcase
@@ -138,21 +187,6 @@ module ir_tx(
 	
 	assign ir_out = carrier & message;
 	
-	function void next_bit();
-		if ( bit_count == 0 ) begin
-		
-			// Decide whether the inverted data still needs to be sent or go to EOF
-			if ( data_sent ) begin
-				state = EOF;
-			end else begin
-				bit_count = BIT_COUNT_RESET_VAL;
-				data_sent = 1'b1; // since the actual data has been sent, set this high
-				state = DATA_BURST_INV;
-			end
-		
-		end else begin
-			bit_count = bit_count - 1'b1;
-			state = data_sent ? DATA_BURST_INV : DATA_BURST;
-		end
-	endfunction
+	
+	
 endmodule
