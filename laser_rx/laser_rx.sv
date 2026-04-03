@@ -11,17 +11,15 @@ localparam DATA_TBS = 8'b0101_1001;
 logic txstart, txdone, rxrecv, rxdone;
 logic baseband_out;
 logic [7:0] data_received;
-logic [2:0] txstate;
+logic [2:0] rxstate;
 
 assign LED = data_received;
-assign GPIO_1[2] = baseband_out;
-assign GPIO_1[3] = ~baseband_out;
 
 ccom_rx nios_system(
 	.clk50_clk(clk50),
 	.reset_n_reset_n(KEY[0]),
 	.datarx_export(data_received),
-	.sysout_export({ 1'b0, txstate[2:0], txstart, txdone, rxrecv, rxdone}),
+	.sysout_export({ 1'b0, rxstate[2:0], txstart, txdone, rxrecv, rxdone}),
 	.sysin_export({ 7'b0, txstart })
 );
 
@@ -32,9 +30,6 @@ ir_tx transmitter(
 	.done(txdone),
 	.data(DATA_TBS),
 	.ir_out(GPIO_0[0]),
-	.carrier_out(GPIO_0[1]),
-	.baseband_out(baseband_out),
-	.state_out(txstate)
 );
 
 

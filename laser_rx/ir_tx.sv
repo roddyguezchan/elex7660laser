@@ -15,10 +15,7 @@ module ir_tx(
 	
 	input logic [7:0] data,
 	
-	output logic ir_out,
-	output logic carrier_out,
-	output logic baseband_out,
-	output logic [3:0] state_out
+	output logic ir_out
 );
 	// Timing constants for 50MHz clock (1 tick = 20ns)
 	localparam BIT_COUNT_RESET_VAL = 3'b111;
@@ -30,8 +27,6 @@ module ir_tx(
 	// Generate carrier frequency
 	logic carrier;
 	clkdiv #(50_000_000, 38_000) c0 (clk50, carrier);
-	assign carrier_out = carrier;
-	assign baseband_out = message;
 	
 	// Transmitter protocol state machine
 	typedef enum logic [3:0] { 
@@ -46,7 +41,6 @@ module ir_tx(
 		WAIT  = 4'd8
 		} state_t;
 	state_t state;
-	assign state_out = state_t'(state);
 	
 	task next_bit_logic;
 		tick_count <= 0;
@@ -176,7 +170,7 @@ module ir_tx(
 
 			WAIT : begin
 				message <= 0;
-				if ( tick_count >= TICK_9MS ) begin
+				if ( tick_count >= '1 ) begin
 					tick_count <= 0;
 					state <= IDLE;
 				end else tick_count <= tick_count + 1'b1;
