@@ -1,14 +1,16 @@
 
 module ccom_rx (
 	clk50_clk,
-	datarx_export,
+	qpdp1_export,
 	reset_n_reset_n,
-	sysin_export,
-	sysout_export);	
+	qpdp2_export,
+	dxdy_export,
+	status_export);	
 
 	input		clk50_clk;
-	input	[7:0]	datarx_export;
+	input	[23:0]	qpdp1_export;
 	input		reset_n_reset_n;
-	output	[7:0]	sysin_export;
-	input	[7:0]	sysout_export;
+	input	[23:0]	qpdp2_export;
+	input	[23:0]	dxdy_export;
+	input	[7:0]	status_export;
 endmodule

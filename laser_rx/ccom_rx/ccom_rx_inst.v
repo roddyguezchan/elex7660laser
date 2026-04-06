@@ -1,8 +1,9 @@
 	ccom_rx u0 (
 		.clk50_clk       (<connected-to-clk50_clk>),       //   clk50.clk
-		.datarx_export   (<connected-to-datarx_export>),   //  datarx.export
+		.qpdp1_export    (<connected-to-qpdp1_export>),    //   qpdp1.export
 		.reset_n_reset_n (<connected-to-reset_n_reset_n>), // reset_n.reset_n
-		.sysin_export    (<connected-to-sysin_export>),    //   sysin.export
-		.sysout_export   (<connected-to-sysout_export>)    //  sysout.export
+		.qpdp2_export    (<connected-to-qpdp2_export>),    //   qpdp2.export
+		.dxdy_export     (<connected-to-dxdy_export>),     //    dxdy.export
+		.status_export   (<connected-to-status_export>)    //  status.export
 	);
 
