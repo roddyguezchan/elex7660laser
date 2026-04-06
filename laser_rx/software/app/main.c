@@ -11,44 +11,41 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <io.h>
-#include <fcntl.h>
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
 
-
 int main() {
-	IOWR_ALTERA_AVALON_PIO_DATA(PIO_FPGA_O_BASE, 0);
+    printf("TL\tTR\tBL\tBR\tDX\tDY\tTarget\tM-Step\n");
 
-    bool pin_on = false;
     while (1) {
-		int datarx = IORD_ALTERA_AVALON_PIO_DATA(PIO_DATARX_BASE);
-        int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_FPGA_I_BASE);
+        // QPD ADC values
+        int qpdp1 = IORD_ALTERA_AVALON_PIO_DATA(PIO_QPDP1_BASE);
+        int qpdp2 = IORD_ALTERA_AVALON_PIO_DATA(PIO_QPDP2_BASE);
 
+        int top_left     = (qpdp1 >> 12) & 0xFFF;
+        int top_right    = qpdp2 & 0xFFF;
+        int bottom_left  = qpdp1 & 0xFFF;
+        int bottom_right = (qpdp2 >> 12) & 0xFFF;
 
-		printf ( "%4d\t %4d\t %4d\n", datarx, (status >> 4) & 0b111, status);
-		fflush(stdout);
+        // DXDY
+        int dxdy = IORD_ALTERA_AVALON_PIO_DATA(PIO_DXDY_BASE);
+        int dx = dxdy >> 12;
+        int dy = dxdy & 0xFFF;
 
-//        char input;
-//        if (read(0, &input, 1) > 0) {
-//            // 0 is the file descriptor for stdin
-//            printf("I received: %c\n\n", input);
-//            if(pin_on)
-//            {
-//            	IOWR_ALTERA_AVALON_PIO_DATA(PIO_STEPPER_BASE, 255);
-//            }
-//            else
-//            {
-//            	IOWR_ALTERA_AVALON_PIO_DATA(PIO_STEPPER_BASE, 0);
-//            }
-//            pin_on = !pin_on;
-//
-//			head();
-//        }
+        // Status
+        int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_STATUS_BASE);
+        bool target_en = status & 0x01;
+        bool mstep_en  = status & 0x02;
 
-        // Small delay so the console is readable (100ms = 10Hz update)
+        printf("%4d\t%4d\t%4d\t%4d\t%5d\t%5d\t%s\t%s\n",
+                top_left, top_right, bottom_left, bottom_right,
+                dx, dy,
+                target_en ? "ON" : "OFF",
+                mstep_en  ? "ON" : "OFF");
+
+        fflush(stdout);
         usleep(100000);
     }
 
     return 0;
 }
-

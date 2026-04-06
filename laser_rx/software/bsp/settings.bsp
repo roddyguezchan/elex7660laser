@@ -2,12 +2,12 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal2</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 2, 2026 12:41:28 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1775115688034</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>/home/raf/src/elex7660laser/laser_rx/software/bsp</BspGeneratedLocation>
-        <BspSettingsFile>/home/raf/src/elex7660laser/laser_rx/./software/bsp/settings.bsp</BspSettingsFile>
-        <SopcDesignFile>../../ccom_rx.sopcinfo</SopcDesignFile>
-        <SystemFileHash>352e1d2f6b3bdc55206a4e65e791d9e22f75059f3d9ab39aa668248ae46701f</SystemFileHash>
+        <BspGeneratedTimeStamp>Apr 5, 2026 7:35:10 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1775442910425</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\rodri\OneDrive\Desktop\elex7660laser-main\elex7660laser-main\laser_rx\software\bsp</BspGeneratedLocation>
+        <BspSettingsFile>C:\Users\rodri\OneDrive\Desktop\elex7660laser-main\elex7660laser-main\laser_rx\.\software\bsp\settings.bsp</BspSettingsFile>
+        <SopcDesignFile>..\..\ccom_rx.sopcinfo</SopcDesignFile>
+        <SystemFileHash>36d634c557eaff3ae21766e4de9e8a62c50a3a18df0c980a8c9edcf3fad7</SystemFileHash>
         <JdiFile>default</JdiFile>
         <Cpu>intel_niosv_m_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -618,26 +618,32 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pio_fpga_i</slaveDescriptor>
+                <slaveDescriptor>pio_status</slaveDescriptor>
                 <addressRange>0x000A0040 - 0x000A004F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pio_fpga_o</slaveDescriptor>
+                <slaveDescriptor>pio_dxdy</slaveDescriptor>
                 <addressRange>0x000A0050 - 0x000A005F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pio_datarx</slaveDescriptor>
+                <slaveDescriptor>pio_qpdp2</slaveDescriptor>
                 <addressRange>0x000A0060 - 0x000A006F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>pio_qpdp1</slaveDescriptor>
+                <addressRange>0x000A0070 - 0x000A007F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x000A0070 - 0x000A0077</addressRange>
+                <addressRange>0x000A0080 - 0x000A0087</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

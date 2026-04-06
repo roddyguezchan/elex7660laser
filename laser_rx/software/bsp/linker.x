@@ -4,7 +4,7 @@
  * Machine generated for CPU 'intel_niosv_m_0' in SOPC Builder design 'ccom_rx'
  * SOPC Builder design path: ../../ccom_rx.sopcinfo
  *
- * Generated: Thu Apr 02 00:41:28 PDT 2026
+ * Generated: Sun Apr 05 19:35:13 PDT 2026
  */
 
 /*

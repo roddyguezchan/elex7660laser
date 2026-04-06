@@ -4,7 +4,7 @@
  * Machine generated for CPU 'intel_niosv_m_0' in SOPC Builder design 'ccom_rx'
  * SOPC Builder design path: ../../ccom_rx.sopcinfo
  *
- * Generated: Thu Apr 02 00:41:28 PDT 2026
+ * Generated: Sun Apr 05 19:35:13 PDT 2026
  */
 
 /*
@@ -135,19 +135,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0xa0070
+#define ALT_STDERR_BASE 0xa0080
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0xa0070
+#define ALT_STDIN_BASE 0xa0080
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0xa0070
+#define ALT_STDOUT_BASE 0xa0080
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -249,7 +249,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0xa0070
+#define JTAG_UART_0_BASE 0xa0080
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -291,83 +291,110 @@
 
 
 /*
- * pio_datarx configuration
+ * pio_dxdy configuration
  *
  */
 
-#define ALT_MODULE_CLASS_pio_datarx altera_avalon_pio
-#define PIO_DATARX_BASE 0xa0060
-#define PIO_DATARX_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_DATARX_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_DATARX_CAPTURE 0
-#define PIO_DATARX_DATA_WIDTH 8
-#define PIO_DATARX_DO_TEST_BENCH_WIRING 0
-#define PIO_DATARX_DRIVEN_SIM_VALUE 0
-#define PIO_DATARX_EDGE_TYPE "NONE"
-#define PIO_DATARX_FREQ 80000000
-#define PIO_DATARX_HAS_IN 1
-#define PIO_DATARX_HAS_OUT 0
-#define PIO_DATARX_HAS_TRI 0
-#define PIO_DATARX_IRQ -1
-#define PIO_DATARX_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_DATARX_IRQ_TYPE "NONE"
-#define PIO_DATARX_NAME "/dev/pio_datarx"
-#define PIO_DATARX_RESET_VALUE 0
-#define PIO_DATARX_SPAN 16
-#define PIO_DATARX_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_pio_dxdy altera_avalon_pio
+#define PIO_DXDY_BASE 0xa0050
+#define PIO_DXDY_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_DXDY_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_DXDY_CAPTURE 0
+#define PIO_DXDY_DATA_WIDTH 24
+#define PIO_DXDY_DO_TEST_BENCH_WIRING 0
+#define PIO_DXDY_DRIVEN_SIM_VALUE 0
+#define PIO_DXDY_EDGE_TYPE "NONE"
+#define PIO_DXDY_FREQ 80000000
+#define PIO_DXDY_HAS_IN 1
+#define PIO_DXDY_HAS_OUT 0
+#define PIO_DXDY_HAS_TRI 0
+#define PIO_DXDY_IRQ -1
+#define PIO_DXDY_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIO_DXDY_IRQ_TYPE "NONE"
+#define PIO_DXDY_NAME "/dev/pio_dxdy"
+#define PIO_DXDY_RESET_VALUE 0
+#define PIO_DXDY_SPAN 16
+#define PIO_DXDY_TYPE "altera_avalon_pio"
 
 
 /*
- * pio_fpga_i configuration
+ * pio_qpdp1 configuration
  *
  */
 
-#define ALT_MODULE_CLASS_pio_fpga_i altera_avalon_pio
-#define PIO_FPGA_I_BASE 0xa0040
-#define PIO_FPGA_I_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_FPGA_I_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_FPGA_I_CAPTURE 0
-#define PIO_FPGA_I_DATA_WIDTH 8
-#define PIO_FPGA_I_DO_TEST_BENCH_WIRING 0
-#define PIO_FPGA_I_DRIVEN_SIM_VALUE 0
-#define PIO_FPGA_I_EDGE_TYPE "NONE"
-#define PIO_FPGA_I_FREQ 80000000
-#define PIO_FPGA_I_HAS_IN 1
-#define PIO_FPGA_I_HAS_OUT 0
-#define PIO_FPGA_I_HAS_TRI 0
-#define PIO_FPGA_I_IRQ -1
-#define PIO_FPGA_I_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_FPGA_I_IRQ_TYPE "NONE"
-#define PIO_FPGA_I_NAME "/dev/pio_fpga_i"
-#define PIO_FPGA_I_RESET_VALUE 0
-#define PIO_FPGA_I_SPAN 16
-#define PIO_FPGA_I_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_pio_qpdp1 altera_avalon_pio
+#define PIO_QPDP1_BASE 0xa0070
+#define PIO_QPDP1_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_QPDP1_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_QPDP1_CAPTURE 0
+#define PIO_QPDP1_DATA_WIDTH 24
+#define PIO_QPDP1_DO_TEST_BENCH_WIRING 0
+#define PIO_QPDP1_DRIVEN_SIM_VALUE 0
+#define PIO_QPDP1_EDGE_TYPE "NONE"
+#define PIO_QPDP1_FREQ 80000000
+#define PIO_QPDP1_HAS_IN 1
+#define PIO_QPDP1_HAS_OUT 0
+#define PIO_QPDP1_HAS_TRI 0
+#define PIO_QPDP1_IRQ -1
+#define PIO_QPDP1_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIO_QPDP1_IRQ_TYPE "NONE"
+#define PIO_QPDP1_NAME "/dev/pio_qpdp1"
+#define PIO_QPDP1_RESET_VALUE 0
+#define PIO_QPDP1_SPAN 16
+#define PIO_QPDP1_TYPE "altera_avalon_pio"
 
 
 /*
- * pio_fpga_o configuration
+ * pio_qpdp2 configuration
  *
  */
 
-#define ALT_MODULE_CLASS_pio_fpga_o altera_avalon_pio
-#define PIO_FPGA_O_BASE 0xa0050
-#define PIO_FPGA_O_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_FPGA_O_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_FPGA_O_CAPTURE 0
-#define PIO_FPGA_O_DATA_WIDTH 8
-#define PIO_FPGA_O_DO_TEST_BENCH_WIRING 0
-#define PIO_FPGA_O_DRIVEN_SIM_VALUE 0
-#define PIO_FPGA_O_EDGE_TYPE "NONE"
-#define PIO_FPGA_O_FREQ 80000000
-#define PIO_FPGA_O_HAS_IN 0
-#define PIO_FPGA_O_HAS_OUT 1
-#define PIO_FPGA_O_HAS_TRI 0
-#define PIO_FPGA_O_IRQ -1
-#define PIO_FPGA_O_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_FPGA_O_IRQ_TYPE "NONE"
-#define PIO_FPGA_O_NAME "/dev/pio_fpga_o"
-#define PIO_FPGA_O_RESET_VALUE 0
-#define PIO_FPGA_O_SPAN 16
-#define PIO_FPGA_O_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_pio_qpdp2 altera_avalon_pio
+#define PIO_QPDP2_BASE 0xa0060
+#define PIO_QPDP2_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_QPDP2_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_QPDP2_CAPTURE 0
+#define PIO_QPDP2_DATA_WIDTH 24
+#define PIO_QPDP2_DO_TEST_BENCH_WIRING 0
+#define PIO_QPDP2_DRIVEN_SIM_VALUE 0
+#define PIO_QPDP2_EDGE_TYPE "NONE"
+#define PIO_QPDP2_FREQ 80000000
+#define PIO_QPDP2_HAS_IN 1
+#define PIO_QPDP2_HAS_OUT 0
+#define PIO_QPDP2_HAS_TRI 0
+#define PIO_QPDP2_IRQ -1
+#define PIO_QPDP2_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIO_QPDP2_IRQ_TYPE "NONE"
+#define PIO_QPDP2_NAME "/dev/pio_qpdp2"
+#define PIO_QPDP2_RESET_VALUE 0
+#define PIO_QPDP2_SPAN 16
+#define PIO_QPDP2_TYPE "altera_avalon_pio"
+
+
+/*
+ * pio_status configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pio_status altera_avalon_pio
+#define PIO_STATUS_BASE 0xa0040
+#define PIO_STATUS_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_STATUS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_STATUS_CAPTURE 0
+#define PIO_STATUS_DATA_WIDTH 8
+#define PIO_STATUS_DO_TEST_BENCH_WIRING 0
+#define PIO_STATUS_DRIVEN_SIM_VALUE 0
+#define PIO_STATUS_EDGE_TYPE "NONE"
+#define PIO_STATUS_FREQ 80000000
+#define PIO_STATUS_HAS_IN 1
+#define PIO_STATUS_HAS_OUT 0
+#define PIO_STATUS_HAS_TRI 0
+#define PIO_STATUS_IRQ -1
+#define PIO_STATUS_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIO_STATUS_IRQ_TYPE "NONE"
+#define PIO_STATUS_NAME "/dev/pio_status"
+#define PIO_STATUS_RESET_VALUE 0
+#define PIO_STATUS_SPAN 16
+#define PIO_STATUS_TYPE "altera_avalon_pio"
 
 #endif /* __SYSTEM_H_ */
