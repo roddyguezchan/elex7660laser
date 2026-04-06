@@ -1,21 +1,21 @@
 bsp/CMakeFiles/hal2_bsp.dir/HAL/src/intel_fpga_platform_api_niosv.c.obj: \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/src/intel_fpga_platform_api_niosv.c \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/intel_fpga_platform_api.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_platform_api_niosv.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/./system.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/./linker.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stdarg.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stdbool.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_api_cmn_msg.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stdint.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/stdint.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_default_types.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/features.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_newlib_version.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_intsup.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_stdint.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/intel_fpga_platform.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_platform_niosv.h \
- /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_api_cmn_dfl.h \
- /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_api_cmn_inf.h
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/src/intel_fpga_platform_api_niosv.c \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/inc/intel_fpga_platform_api.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_platform_api_niosv.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/system.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/linker.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stdarg.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stdbool.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_api_cmn_msg.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stdint.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/stdint.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_default_types.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/features.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_newlib_version.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_intsup.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_stdint.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/inc/intel_fpga_platform.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_platform_niosv.h \
+ C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_api_cmn_dfl.h \
+ C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/intel_fpga_api_cmn_inf.h

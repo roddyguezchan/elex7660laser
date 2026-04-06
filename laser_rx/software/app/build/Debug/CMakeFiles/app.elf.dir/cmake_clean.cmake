@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.elf.dir/main.c.obj"
   "CMakeFiles/app.elf.dir/main.c.obj.d"
   "app.elf"
+  "app.elf.manifest"
   "app.elf.pdb"
 )
 

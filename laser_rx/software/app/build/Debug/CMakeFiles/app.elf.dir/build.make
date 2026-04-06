@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake
+CMAKE_COMMAND = C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E rm -f
+RM = C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raf/src/elex7660laser/laser_rx/software/app
+CMAKE_SOURCE_DIR = C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug
+CMAKE_BINARY_DIR = C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/app.elf.dir/depend.make
@@ -73,18 +73,18 @@ CMakeFiles/app.elf.dir/codegen:
 .PHONY : CMakeFiles/app.elf.dir/codegen
 
 CMakeFiles/app.elf.dir/main.c.obj: CMakeFiles/app.elf.dir/flags.make
-CMakeFiles/app.elf.dir/main.c.obj: /home/raf/src/elex7660laser/laser_rx/software/app/main.c
+CMakeFiles/app.elf.dir/main.c.obj: C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/main.c
 CMakeFiles/app.elf.dir/main.c.obj: CMakeFiles/app.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/app.elf.dir/main.c.obj"
-	/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.elf.dir/main.c.obj -MF CMakeFiles/app.elf.dir/main.c.obj.d -o CMakeFiles/app.elf.dir/main.c.obj -c /home/raf/src/elex7660laser/laser_rx/software/app/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/app.elf.dir/main.c.obj"
+	C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.elf.dir/main.c.obj -MF CMakeFiles/app.elf.dir/main.c.obj.d -o CMakeFiles/app.elf.dir/main.c.obj -c C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/main.c
 
 CMakeFiles/app.elf.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/app.elf.dir/main.c.i"
-	/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/raf/src/elex7660laser/laser_rx/software/app/main.c > CMakeFiles/app.elf.dir/main.c.i
+	C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/main.c > CMakeFiles/app.elf.dir/main.c.i
 
 CMakeFiles/app.elf.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/app.elf.dir/main.c.s"
-	/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/raf/src/elex7660laser/laser_rx/software/app/main.c -o CMakeFiles/app.elf.dir/main.c.s
+	C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/main.c -o CMakeFiles/app.elf.dir/main.c.s
 
 # Object files for target app.elf
 app_elf_OBJECTS = \
@@ -95,11 +95,10 @@ app_elf_EXTERNAL_OBJECTS =
 
 app.elf: CMakeFiles/app.elf.dir/main.c.obj
 app.elf: CMakeFiles/app.elf.dir/build.make
-app.elf: /home/raf/src/elex7660laser/laser_rx/software/bsp/linker.x
+app.elf: C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/linker.x
 app.elf: bsp/libhal2_bsp.a
-app.elf: CMakeFiles/app.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable app.elf"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.elf.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable app.elf"
+	C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc.exe -g -march=rv32i -mabi=ilp32 -nostdlib $(app_elf_OBJECTS) $(app_elf_EXTERNAL_OBJECTS) -o app.elf  -T C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/bsp/linker.x -nostdlib -Wl,--start-group bsp/libhal2_bsp.a -lc -lstdc++ -lgcc -lm -Wl,--end-group
 
 # Rule to build all files generated by this target.
 CMakeFiles/app.elf.dir/build: app.elf
@@ -110,6 +109,6 @@ CMakeFiles/app.elf.dir/clean:
 .PHONY : CMakeFiles/app.elf.dir/clean
 
 CMakeFiles/app.elf.dir/depend:
-	cd /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raf/src/elex7660laser/laser_rx/software/app /home/raf/src/elex7660laser/laser_rx/software/app /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/app.elf.dir/DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/app.elf.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/app.elf.dir/depend
 

@@ -22,9 +22,9 @@ int main() {
         int qpdp1 = IORD_ALTERA_AVALON_PIO_DATA(PIO_QPDP1_BASE);
         int qpdp2 = IORD_ALTERA_AVALON_PIO_DATA(PIO_QPDP2_BASE);
 
-        int top_left     = (qpdp1 >> 12) & 0xFFF;
-        int top_right    = qpdp2 & 0xFFF;
-        int bottom_left  = qpdp1 & 0xFFF;
+        int top_left = (qpdp1 >> 12) & 0xFFF;
+        int top_right = qpdp2 & 0xFFF;
+        int bottom_left = qpdp1 & 0xFFF;
         int bottom_right = (qpdp2 >> 12) & 0xFFF;
 
         // DXDY
@@ -32,10 +32,13 @@ int main() {
         int dx = dxdy >> 12;
         int dy = dxdy & 0xFFF;
 
+        dx = (dx << 20) >> 20;
+        dy = (dy << 20) >> 20;
+
         // Status
         int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_STATUS_BASE);
-        bool target_en = status & 0x01;
-        bool mstep_en  = status & 0x02;
+        bool target_en = status & 0x02;
+        bool mstep_en = status & 0x01;
 
         printf("%4d\t%4d\t%4d\t%4d\t%5d\t%5d\t%s\t%s\n",
                 top_left, top_right, bottom_left, bottom_right,

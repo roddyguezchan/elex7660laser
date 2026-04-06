@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc")
+set(CMAKE_C_COMPILER "C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "13.2.0")
@@ -23,10 +23,10 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 set(CMAKE_AR "riscv32-unknown-elf-ar")
-set(CMAKE_C_COMPILER_AR "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc-ar")
-set(CMAKE_RANLIB "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ranlib")
-set(CMAKE_C_COMPILER_RANLIB "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc-ranlib")
-set(CMAKE_LINKER "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ld")
+set(CMAKE_C_COMPILER_AR "C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc-ar.exe")
+set(CMAKE_RANLIB "C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/bin/riscv32-unknown-elf-ld.exe")
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
 set(CMAKE_C_COMPILER_LINKER "NOTFOUND")
@@ -75,7 +75,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed;/home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include;C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include-fixed;C:/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
