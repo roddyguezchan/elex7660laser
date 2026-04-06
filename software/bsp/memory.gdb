@@ -3,7 +3,7 @@
 # Machine generated for CPU 'intel_niosv_m_0' in SOPC Builder design 'ccom'
 # SOPC Builder design path: ../../ccom.sopcinfo
 #
-# Generated: Mon Mar 30 18:14:05 PDT 2026
+# Generated: Sun Apr 05 19:51:31 PDT 2026
 
 # DO NOT MODIFY THIS FILE
 #

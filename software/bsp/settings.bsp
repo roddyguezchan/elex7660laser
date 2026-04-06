@@ -2,12 +2,12 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal2</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>30-Mar-2026 6:14:00 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1774919640589</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>5-Apr-2026 7:51:28 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1775443888994</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\alecb\Code\ELEX7660\elex7660laser\software\bsp</BspGeneratedLocation>
         <BspSettingsFile>C:\Users\alecb\Code\ELEX7660\elex7660laser\.\software\bsp\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ccom.sopcinfo</SopcDesignFile>
-        <SystemFileHash>36539f9a8e6b4e5eed8cc78ba1fe6b58c18036cee2b9eb21d0788de98ea96cdf</SystemFileHash>
+        <SystemFileHash>3b5cc283bd5c9329b66374ac95524edde6e3af0c0737e4d019a78d336306e</SystemFileHash>
         <JdiFile>default</JdiFile>
         <Cpu>intel_niosv_m_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -618,56 +618,14 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pio_stepper</slaveDescriptor>
-                <addressRange>0x000A0040 - 0x000A004F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>pio_status</slaveDescriptor>
-                <addressRange>0x000A0050 - 0x000A005F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>pio_q1</slaveDescriptor>
                 <addressRange>0x000A0060 - 0x000A006F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pio_q3</slaveDescriptor>
-                <addressRange>0x000A0070 - 0x000A007F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>pio_q2</slaveDescriptor>
-                <addressRange>0x000A0080 - 0x000A008F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>pio_q0</slaveDescriptor>
-                <addressRange>0x000A0090 - 0x000A009F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>pio_1</slaveDescriptor>
-                <addressRange>0x000A00A0 - 0x000A00AF</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>pio_0</slaveDescriptor>
-                <addressRange>0x000A00B0 - 0x000A00BF</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x000A00C0 - 0x000A00C7</addressRange>
+                <addressRange>0x000A00A0 - 0x000A00A7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
