@@ -1,46 +1,49 @@
 module laser_rx(
-	input logic clk50,
+	input logic clk50, clk38,
 	input  logic [1:0] KEY, // onboard FPGA dev board buttons
 	output logic [3:0] GPIO_0, // 0 used for transmitter
-	input logic [1:0] GPIO_1, // 0 used for receiver
-	output logic [7:0] LED
+	
+	 // onboard FPGA dev board ADC chip
+	 input  logic ADC_SDO, 
+    output logic ADC_CONVST, ADC_SDI, ADC_SCK
 );
 
-localparam DATA_TBS = 8'b0101_1001;
-
-logic txstart, txdone, rxrecv, rxdone;
-logic baseband_out;
-logic [7:0] data_received;
-logic [2:0] rxstate;
-
-assign LED = data_received;
+logic [1:0] rx_state_status;
+logic [23:0] dxdy;
+logic [11:0] q0, q1, q2, q3;
 
 ccom_rx nios_system(
 	.clk50_clk(clk50),
 	.reset_n_reset_n(KEY[0]),
-	.datarx_export(data_received),
-	.sysout_export({ 1'b0, rxstate[2:0], txstart, txdone, rxrecv, rxdone}),
-	.sysin_export({ 7'b0, txstart })
+	.dxdy_export(dxdy),
+	.qpdp1_export({ q3, q2 }),
+	.qpdp2_export({ q1, q0 }),
+	.status_export({ 6'b111111, rx_state_status})
 );
 
-ir_tx transmitter(
+adc_qpd_scanner qpdrd(
+	.clk(clk50),
+	.reset(!KEY[0]),
+	.sdo(ADC_SDO),
+	.convst(ADC_CONVST),
+	.sck(ADC_SCK),
+	.sdi(ADC_SDI),
+	.q0(q0),
+	.q1(q1),
+	.q2(q2),
+	.q3(q3)
+);
+
+rx_state r0 (
 	.clk50(clk50),
-	.reset(!KEY[1]),
-	.start(txstart | GPIO_1[1]),
-	.done(txdone),
-	.data(DATA_TBS),
+	.reset(!KEY[0]),
+	.dxdy(dxdy),
+	.status(rx_state_status),
 	.ir_out(GPIO_0[0]),
+	.q0(q0),
+	.q1(q1),
+	.q2(q2),
+	.q3(q3)
 );
-
-
-ir_rx receiver(
-	.clk50(clk50),
-	.reset(!KEY[1]),
-	.ir_input(GPIO_1[0]),
-	.recv(rxrecv),
-	.done(rxdone),
-	.data(data_received)
-);
-
 
 endmodule
