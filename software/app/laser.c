@@ -2,8 +2,8 @@
    
 cd <project folder>
 
-niosv-bsp -c -t=hal --sopcinfo=lab4.sopcinfo ./software/bsp/settings.bsp
-niosv-app -a=software/app -b=software/bsp -s=./software/app/lab4.c
+niosv-bsp -c -t=hal --sopcinfo=ccom.sopcinfo ./software/bsp/settings.bsp
+niosv-app -a=software/app -b=software/bsp -s=./software/app/laser.c
 
 
 To view JTAG UART output, run:
@@ -14,36 +14,58 @@ juart-terminal
 
 
 #include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <io.h>
+#include <fcntl.h>
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
+#include "limits.h"
+
+#define THRESHHOLD 0.15f
+void head();
+char* int_to_binary(int n);
 
 int main() {
-    printf("QPD ADC VALUES.....\n");
-    printf("Q0 (TR) | Q1 (BR) | Q2 (BL) | Q3 (TL)\n");
-    printf("--------------------------------------\n");
+    printf("Transmitter monitor.....\n");
+    head();
 
+    bool pin_on = false;
     while (1) {
+        int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_STATUS_BASE);
+		status &= 0b11111111;
+		char* status_bin = int_to_binary(status);
 
-        // Read each quadrant from its respective PIO
-        // Using IORD_ALTERA_AVALON_PIO_DATA is the safest way to access PIOs
-        int q0 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q0_BASE);
-        int q1 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q1_BASE);
-        int q2 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q2_BASE);
-        int q3 = IORD_ALTERA_AVALON_PIO_DATA(PIO_Q3_BASE);
+		printf(" %4d | %s \n", status, status_bin);
 
-        // Print values on one line.
-        // %4d ensures the numbers don't "jump" around if they change digits.
-        // \r returns the cursor to the start of the line.
-        printf(" %4d   |  %4d   |  %4d   |  %4d   \r", q0, q1, q2, q3);
+		// Flush the output to ensure it updates immediately in RiscFree
+		fflush(stdout);
 
-        // Flush the output to ensure it updates immediately in RiscFree
-        fflush(stdout);
+    }
+    return 0;
+}
 
-        // Small delay so the console is readable (100ms = 10Hz update)
-        usleep(100000);
+void head()
+{
+	printf("MESSAGE");
+	printf("--------------------------------------\n");
+}
+
+char* int_to_binary(int n) {
+    int bits = sizeof(int) * CHAR_BIT;
+    char* binary_str = (char*)malloc(bits + 1);
+    if (!binary_str) return NULL;
+
+    binary_str[bits] = '\0';
+
+    // Cast to unsigned to ensure logical shift behavior
+    unsigned int temp = (unsigned int)n;
+
+    for (int i = bits - 1; i >= 0; i--) {
+        binary_str[i] = (temp & 1) ? '1' : '0';
+        temp >>= 1;
     }
 
-    return 0;
+    return binary_str;
 }

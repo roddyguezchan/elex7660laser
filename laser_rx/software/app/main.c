@@ -1,0 +1,51 @@
+/*
+ * main.c
+ *
+ *  Created on: Apr 1, 2026
+ *      Author: raf
+ */
+
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <io.h>
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+
+int main() {
+    printf("TL\tTR\tBL\tBR\tDX\tDY\tTarget\tM-Step\n");
+
+    while (1) {
+        // QPD ADC values
+        int qpdp1 = IORD_ALTERA_AVALON_PIO_DATA(PIO_QPDP1_BASE);
+        int qpdp2 = IORD_ALTERA_AVALON_PIO_DATA(PIO_QPDP2_BASE);
+
+        int top_left     = (qpdp1 >> 12) & 0xFFF;
+        int top_right    = qpdp2 & 0xFFF;
+        int bottom_left  = qpdp1 & 0xFFF;
+        int bottom_right = (qpdp2 >> 12) & 0xFFF;
+
+        // DXDY
+        int dxdy = IORD_ALTERA_AVALON_PIO_DATA(PIO_DXDY_BASE);
+        int dx = dxdy >> 12;
+        int dy = dxdy & 0xFFF;
+
+        // Status
+        int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_STATUS_BASE);
+        bool target_en = status & 0x01;
+        bool mstep_en  = status & 0x02;
+
+        printf("%4d\t%4d\t%4d\t%4d\t%5d\t%5d\t%s\t%s\n",
+                top_left, top_right, bottom_left, bottom_right,
+                dx, dy,
+                target_en ? "ON" : "OFF",
+                mstep_en  ? "ON" : "OFF");
+
+        fflush(stdout);
+        usleep(100000);
+    }
+
+    return 0;
+}

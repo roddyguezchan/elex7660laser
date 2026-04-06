@@ -4,7 +4,7 @@
  * Machine generated for CPU 'intel_niosv_m_0' in SOPC Builder design 'ccom'
  * SOPC Builder design path: ../../ccom.sopcinfo
  *
- * Generated: Mon Mar 23 13:16:09 PDT 2026
+ * Generated: Sun Apr 05 19:51:31 PDT 2026
  */
 
 /*
@@ -291,164 +291,29 @@
 
 
 /*
- * pio_0 configuration
+ * pio_status configuration
  *
  */
 
-#define ALT_MODULE_CLASS_pio_0 altera_avalon_pio
-#define PIO_0_BASE 0xa0090
-#define PIO_0_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_0_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_0_CAPTURE 0
-#define PIO_0_DATA_WIDTH 8
-#define PIO_0_DO_TEST_BENCH_WIRING 0
-#define PIO_0_DRIVEN_SIM_VALUE 0
-#define PIO_0_EDGE_TYPE "NONE"
-#define PIO_0_FREQ 80000000
-#define PIO_0_HAS_IN 0
-#define PIO_0_HAS_OUT 1
-#define PIO_0_HAS_TRI 0
-#define PIO_0_IRQ -1
-#define PIO_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_0_IRQ_TYPE "NONE"
-#define PIO_0_NAME "/dev/pio_0"
-#define PIO_0_RESET_VALUE 0
-#define PIO_0_SPAN 16
-#define PIO_0_TYPE "altera_avalon_pio"
-
-
-/*
- * pio_1 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_pio_1 altera_avalon_pio
-#define PIO_1_BASE 0xa0080
-#define PIO_1_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_1_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_1_CAPTURE 0
-#define PIO_1_DATA_WIDTH 1
-#define PIO_1_DO_TEST_BENCH_WIRING 0
-#define PIO_1_DRIVEN_SIM_VALUE 0
-#define PIO_1_EDGE_TYPE "NONE"
-#define PIO_1_FREQ 80000000
-#define PIO_1_HAS_IN 1
-#define PIO_1_HAS_OUT 0
-#define PIO_1_HAS_TRI 0
-#define PIO_1_IRQ -1
-#define PIO_1_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_1_IRQ_TYPE "NONE"
-#define PIO_1_NAME "/dev/pio_1"
-#define PIO_1_RESET_VALUE 0
-#define PIO_1_SPAN 16
-#define PIO_1_TYPE "altera_avalon_pio"
-
-
-/*
- * pio_q0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_pio_q0 altera_avalon_pio
-#define PIO_Q0_BASE 0xa0070
-#define PIO_Q0_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_Q0_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_Q0_CAPTURE 0
-#define PIO_Q0_DATA_WIDTH 12
-#define PIO_Q0_DO_TEST_BENCH_WIRING 0
-#define PIO_Q0_DRIVEN_SIM_VALUE 0
-#define PIO_Q0_EDGE_TYPE "NONE"
-#define PIO_Q0_FREQ 80000000
-#define PIO_Q0_HAS_IN 1
-#define PIO_Q0_HAS_OUT 0
-#define PIO_Q0_HAS_TRI 0
-#define PIO_Q0_IRQ -1
-#define PIO_Q0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_Q0_IRQ_TYPE "NONE"
-#define PIO_Q0_NAME "/dev/pio_q0"
-#define PIO_Q0_RESET_VALUE 0
-#define PIO_Q0_SPAN 16
-#define PIO_Q0_TYPE "altera_avalon_pio"
-
-
-/*
- * pio_q1 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_pio_q1 altera_avalon_pio
-#define PIO_Q1_BASE 0xa0040
-#define PIO_Q1_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_Q1_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_Q1_CAPTURE 0
-#define PIO_Q1_DATA_WIDTH 12
-#define PIO_Q1_DO_TEST_BENCH_WIRING 0
-#define PIO_Q1_DRIVEN_SIM_VALUE 0
-#define PIO_Q1_EDGE_TYPE "NONE"
-#define PIO_Q1_FREQ 80000000
-#define PIO_Q1_HAS_IN 1
-#define PIO_Q1_HAS_OUT 0
-#define PIO_Q1_HAS_TRI 0
-#define PIO_Q1_IRQ -1
-#define PIO_Q1_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_Q1_IRQ_TYPE "NONE"
-#define PIO_Q1_NAME "/dev/pio_q1"
-#define PIO_Q1_RESET_VALUE 0
-#define PIO_Q1_SPAN 16
-#define PIO_Q1_TYPE "altera_avalon_pio"
-
-
-/*
- * pio_q2 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_pio_q2 altera_avalon_pio
-#define PIO_Q2_BASE 0xa0060
-#define PIO_Q2_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_Q2_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_Q2_CAPTURE 0
-#define PIO_Q2_DATA_WIDTH 12
-#define PIO_Q2_DO_TEST_BENCH_WIRING 0
-#define PIO_Q2_DRIVEN_SIM_VALUE 0
-#define PIO_Q2_EDGE_TYPE "NONE"
-#define PIO_Q2_FREQ 80000000
-#define PIO_Q2_HAS_IN 1
-#define PIO_Q2_HAS_OUT 0
-#define PIO_Q2_HAS_TRI 0
-#define PIO_Q2_IRQ -1
-#define PIO_Q2_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_Q2_IRQ_TYPE "NONE"
-#define PIO_Q2_NAME "/dev/pio_q2"
-#define PIO_Q2_RESET_VALUE 0
-#define PIO_Q2_SPAN 16
-#define PIO_Q2_TYPE "altera_avalon_pio"
-
-
-/*
- * pio_q3 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_pio_q3 altera_avalon_pio
-#define PIO_Q3_BASE 0xa0050
-#define PIO_Q3_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_Q3_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_Q3_CAPTURE 0
-#define PIO_Q3_DATA_WIDTH 12
-#define PIO_Q3_DO_TEST_BENCH_WIRING 0
-#define PIO_Q3_DRIVEN_SIM_VALUE 0
-#define PIO_Q3_EDGE_TYPE "NONE"
-#define PIO_Q3_FREQ 80000000
-#define PIO_Q3_HAS_IN 1
-#define PIO_Q3_HAS_OUT 0
-#define PIO_Q3_HAS_TRI 0
-#define PIO_Q3_IRQ -1
-#define PIO_Q3_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_Q3_IRQ_TYPE "NONE"
-#define PIO_Q3_NAME "/dev/pio_q3"
-#define PIO_Q3_RESET_VALUE 0
-#define PIO_Q3_SPAN 16
-#define PIO_Q3_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_pio_status altera_avalon_pio
+#define PIO_STATUS_BASE 0xa0060
+#define PIO_STATUS_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_STATUS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_STATUS_CAPTURE 0
+#define PIO_STATUS_DATA_WIDTH 12
+#define PIO_STATUS_DO_TEST_BENCH_WIRING 0
+#define PIO_STATUS_DRIVEN_SIM_VALUE 0
+#define PIO_STATUS_EDGE_TYPE "NONE"
+#define PIO_STATUS_FREQ 80000000
+#define PIO_STATUS_HAS_IN 1
+#define PIO_STATUS_HAS_OUT 0
+#define PIO_STATUS_HAS_TRI 0
+#define PIO_STATUS_IRQ -1
+#define PIO_STATUS_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIO_STATUS_IRQ_TYPE "NONE"
+#define PIO_STATUS_NAME "/dev/pio_status"
+#define PIO_STATUS_RESET_VALUE 0
+#define PIO_STATUS_SPAN 16
+#define PIO_STATUS_TYPE "altera_avalon_pio"
 
 #endif /* __SYSTEM_H_ */

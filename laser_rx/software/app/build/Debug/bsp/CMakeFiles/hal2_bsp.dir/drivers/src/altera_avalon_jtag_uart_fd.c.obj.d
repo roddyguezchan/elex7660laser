@@ -1,0 +1,19 @@
+bsp/CMakeFiles/hal2_bsp.dir/drivers/src/altera_avalon_jtag_uart_fd.c.obj: \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/drivers/src/altera_avalon_jtag_uart_fd.c \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/alt_types.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_dev.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/./system.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/./linker.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_llist.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/priv/alt_dev_llist.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/drivers/inc/altera_avalon_jtag_uart.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_alarm.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_llist.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/priv/alt_alarm.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_warning.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/os/alt_hooks.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/os/alt_sem.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/priv/alt_no_error.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/os/alt_flag.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/drivers/inc/altera_avalon_jtag_uart_fd.h

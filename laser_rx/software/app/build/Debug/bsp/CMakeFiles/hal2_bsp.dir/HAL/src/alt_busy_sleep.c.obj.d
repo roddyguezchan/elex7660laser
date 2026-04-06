@@ -1,0 +1,20 @@
+bsp/CMakeFiles/hal2_bsp.dir/HAL/src/alt_busy_sleep.c.obj: \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/src/alt_busy_sleep.c \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/limits.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/syslimits.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/limits.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/newlib.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_newlib_version.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/cdefs.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_default_types.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/features.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /home/raf/altera_lite/25.1std/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/syslimits.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/./system.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/./linker.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/alt_types.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/sys/alt_timestamp.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/intel_niosv.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/alt_types.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/io.h \
+ /home/raf/src/elex7660laser/laser_rx/software/bsp/HAL/inc/priv/alt_busy_sleep.h

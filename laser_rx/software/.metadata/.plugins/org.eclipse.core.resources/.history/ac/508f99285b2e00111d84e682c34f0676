@@ -1,0 +1,54 @@
+/*
+ * main.c
+ *
+ *  Created on: Apr 1, 2026
+ *      Author: raf
+ */
+
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <io.h>
+#include <fcntl.h>
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+
+
+int main() {
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_FPGA_O_BASE, 1);
+
+    bool pin_on = false;
+    while (1) {
+		int datarx = IORD_ALTERA_AVALON_PIO_DATA(PIO_DATARX_BASE);
+        int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_FPGA_I_BASE);
+
+
+		printf ( "%4d\t %4d\t %4d\n", datarx, (status >> 4) & 0b111, status & 0b1111);
+		fflush(stdout);
+
+//        char input;
+//        if (read(0, &input, 1) > 0) {
+//            // 0 is the file descriptor for stdin
+//            printf("I received: %c\n\n", input);
+//            if(pin_on)
+//            {
+//            	IOWR_ALTERA_AVALON_PIO_DATA(PIO_STEPPER_BASE, 255);
+//            }
+//            else
+//            {
+//            	IOWR_ALTERA_AVALON_PIO_DATA(PIO_STEPPER_BASE, 0);
+//            }
+//            pin_on = !pin_on;
+//
+//			head();
+//        }
+
+        // Small delay so the console is readable (100ms = 10Hz update)
+        //usleep(100000);
+    }
+
+    return 0;
+}
+
