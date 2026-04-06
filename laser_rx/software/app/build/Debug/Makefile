@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake
+CMAKE_COMMAND = C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E rm -f
+RM = C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raf/src/elex7660laser/laser_rx/software/app
+CMAKE_SOURCE_DIR = C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug
+CMAKE_BINARY_DIR = C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake-gui.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

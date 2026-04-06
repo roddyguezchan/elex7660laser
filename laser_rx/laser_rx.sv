@@ -1,7 +1,7 @@
 module laser_rx(
 	input logic clk50, clk38,
 	input  logic [1:0] KEY, // onboard FPGA dev board buttons
-	output logic [3:0] GPIO_0, // 0 used for transmitter
+	output logic [3:0] GPIO_1, // 0 used for transmitter
 	
 	 // onboard FPGA dev board ADC chip
 	 input  logic ADC_SDO, 
@@ -39,7 +39,7 @@ rx_state r0 (
 	.reset(!KEY[0]),
 	.dxdy(dxdy),
 	.status(rx_state_status),
-	.ir_out(GPIO_0[0]),
+	.ir_out(GPIO_1[0]),
 	.q0(q0),
 	.q1(q1),
 	.q2(q2),

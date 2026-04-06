@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/raf/src/elex7660laser/laser_rx/software/app/main.c" "CMakeFiles/app.elf.dir/main.c.obj" "gcc" "CMakeFiles/app.elf.dir/main.c.obj.d"
+  "C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/main.c" "CMakeFiles/app.elf.dir/main.c.obj" "gcc" "CMakeFiles/app.elf.dir/main.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

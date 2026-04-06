@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake
+CMAKE_COMMAND = C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /home/raf/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake -E rm -f
+RM = C:/altera_lite/25.1std/riscfree/build_tools/cmake/bin/cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raf/src/elex7660laser/laser_rx/software/app
+CMAKE_SOURCE_DIR = C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug
+CMAKE_BINARY_DIR = C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug
 
 # Utility rule file for create-objdump.
 
@@ -69,7 +69,7 @@ include CMakeFiles/create-objdump.dir/progress.make
 CMakeFiles/create-objdump: app.elf.objdump
 
 app.elf.objdump: app.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating app.elf.objdump."
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating app.elf.objdump."
 	riscv32-unknown-elf-objdump -Sdtx app.elf > app.elf.objdump
 
 CMakeFiles/create-objdump.dir/codegen:
@@ -89,6 +89,6 @@ CMakeFiles/create-objdump.dir/clean:
 .PHONY : CMakeFiles/create-objdump.dir/clean
 
 CMakeFiles/create-objdump.dir/depend:
-	cd /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raf/src/elex7660laser/laser_rx/software/app /home/raf/src/elex7660laser/laser_rx/software/app /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug /home/raf/src/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/create-objdump.dir/DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug C:/Users/rodri/OneDrive/Documents/BCIT/Level_6/ELEX7660/Labs/elex7660laser/laser_rx/software/app/build/Debug/CMakeFiles/create-objdump.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/create-objdump.dir/depend
 
