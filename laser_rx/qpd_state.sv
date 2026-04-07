@@ -7,7 +7,7 @@
 */
 
 module qpd_state(
-    input  logic        clk,        // System Clock (e.g. 80MHz)
+    input  logic        clk,
     input  logic        reset_n,    // Active-low reset
     input  logic [11:0] q0, q1, q2, q3,
     output logic        on_target,
