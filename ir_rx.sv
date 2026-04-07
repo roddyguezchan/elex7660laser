@@ -24,14 +24,14 @@ module ir_rx(
 );
 
 	// Timing constants (ticks using 50 MHz period)
-	localparam BURST_MIN = 300_000;
-	localparam BURST_MAX = 600_000;
-	localparam SPACE_MIN = 150_000;
-	localparam SPACE_MAX = 350_000;
-	localparam DATA_BURST_MIN = 15_000;   // ~300 us
-	localparam DATA_BURST_MAX = 45_000;   // ~900 us
-	localparam BIT_THRESHOLD = 55_000;
-	localparam TIMEOUT = 20'd750_000; // ~15 ms
+	localparam BURST_MIN = 150_000;
+	localparam BURST_MAX = 300_000;
+	localparam SPACE_MIN = 50_000;
+	localparam SPACE_MAX = 175_000;
+	localparam DATA_BURST_MIN = 8_000;   // ~160 us
+	localparam DATA_BURST_MAX = 25_000;   // ~500 us
+	localparam BIT_THRESHOLD = 30_000;
+	localparam TIMEOUT = 400_000; // ~8 ms
 
 	// Edge detector
 	logic ir_sync0, ir_sync;

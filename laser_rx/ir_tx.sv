@@ -19,10 +19,10 @@ module ir_tx(
 );
 	// Timing constants for 50MHz clock (1 tick = 20ns)
 	localparam BIT_COUNT_RESET_VAL = 3'b111;
-	localparam TICK_9MS = 450_000; // header burst time
-	localparam TICK_4_5MS = 225_000; // header space time
-	localparam TICK_562_5US = 28_125; // data burst / data zero / EOF burst
-	localparam TICK_1_6875MS = 84_375; // data one
+	localparam TICK_HEADER_BURST = 225_000; // header burst time
+	localparam TICK_HEADER_SPACE = 112_500; // header space time
+	localparam TICK_DATA_BURST = 15_000; // data burst / data zero / EOF burst
+	localparam TICK_DATA_SPACE = 45_000; // data one
 	
 	// Generate carrier frequency
 	logic carrier;
@@ -81,7 +81,7 @@ module ir_tx(
 		// HEADER_BURST STATE
 			HEADER_BURST : begin
 				message <= 1;
-				if ( tick_count >= TICK_9MS ) begin
+				if ( tick_count >= TICK_HEADER_BURST ) begin
 					tick_count <= 0;
 					state <= HEADER_SPACE;
 				end else tick_count <= tick_count + 1'b1;
@@ -90,7 +90,7 @@ module ir_tx(
 		// HEADER_SPACE STATE
 			HEADER_SPACE : begin
 				message <= 0;
-				if ( tick_count >= TICK_4_5MS ) begin
+				if ( tick_count >= TICK_HEADER_SPACE ) begin
 					tick_count <= 0;
 					state <= DATA_BURST;
 				end else tick_count <= tick_count + 1'b1;
@@ -99,22 +99,22 @@ module ir_tx(
 		// DATA BURST
 			DATA_BURST : begin
 				message <= 1;
-				if ( tick_count >= TICK_562_5US ) begin
+				if ( tick_count >= TICK_DATA_BURST ) begin
 					tick_count <= 0;
 					state <= DATA_SPACE;
 				end else tick_count <= tick_count + 1'b1;
 			end
 			
-		// DATA STATE
+		// DATA SPATE
 			DATA_SPACE : begin
 				message <= 0;
 				if( data_out[bit_count] == 1'b1 ) begin
-					if (tick_count >= TICK_1_6875MS ) begin
+					if (tick_count >= TICK_DATA_SPACE ) begin
 						tick_count <= 0;
 						next_bit_logic();
 					end else tick_count <= tick_count + 1'b1;
 				end else begin // if the current bit is a 0
-					if ( tick_count >= TICK_562_5US ) begin
+					if ( tick_count >= TICK_DATA_BURST ) begin
 						tick_count <= 0;
 						next_bit_logic();
 					end else tick_count <= tick_count + 1'b1;
@@ -124,7 +124,7 @@ module ir_tx(
 //			// DATA BURST INVERTED
 //			DATA_BURST_INV : begin
 //				message <= 1;
-//				if ( tick_count >= TICK_562_5US ) begin
+//				if ( tick_count >= TICK_DATA_BURST ) begin
 //					tick_count <= 0;
 //					state <= DATA_SPACE_INV;
 //				end else tick_count <= tick_count + 1'b1;
@@ -134,12 +134,12 @@ module ir_tx(
 //			DATA_SPACE_INV : begin
 //				message <= 0;
 //				if( ~data_out[bit_count] == 1'b1 ) begin
-//					if (tick_count >= TICK_1_6875MS ) begin
+//					if (tick_count >= TICK_DATA_SPACE ) begin
 //						tick_count <= 0;
 //						next_bit_logic();
 //					end else tick_count <= tick_count + 1'b1;
 //				end else begin // if the inverse of the current bit is a 1
-//					if ( tick_count >= TICK_562_5US ) begin
+//					if ( tick_count >= TICK_DATA_BURST ) begin
 //						tick_count <= 0;
 //						next_bit_logic();
 //					end else tick_count <= tick_count + 1'b1;
@@ -149,7 +149,7 @@ module ir_tx(
 		
 			EOF : begin
 				message <= 1;
-				if ( tick_count >= TICK_562_5US ) begin
+				if ( tick_count >= TICK_DATA_BURST ) begin
 					tick_count <= 0;
 					done <= 1;
 					if ( start ) state <= WAIT;
