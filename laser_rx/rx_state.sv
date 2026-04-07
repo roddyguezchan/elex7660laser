@@ -12,19 +12,8 @@ module rx_state (
 	logic on_target, micro;
 	logic [4:0] move_com;
 	
-	qpd_state qpd0 (
-		.clk(clk50),
-		.reset_n(!reset),
-		.q0(q0),
-		.q1(q1),
-		.q2(q2),
-		.q3(q3),
-		.on_target(on_target),
-		.micro(micro),
-		.dxdy(dxdy),
-		.move_com(move_com)
-	);
-	
+	qpd_state qpd0 (.*);
+	 
 	assign status = { on_target, micro };
 	
 	ir_tx ir0(

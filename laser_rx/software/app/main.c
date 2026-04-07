@@ -33,7 +33,7 @@ int main() {
         int dy = dxdy & 0xFFF;
 
         dx = (dx << 20) >> 20;
-		dy = (dy << 20) >> 20;
+        dy = (dy << 20) >> 20;
 
         // Status
         int status = IORD_ALTERA_AVALON_PIO_DATA(PIO_STATUS_BASE);

@@ -2,12 +2,12 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal2</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 5, 2026 7:35:10 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1775442910425</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\rodri\OneDrive\Desktop\elex7660laser-main\elex7660laser-main\laser_rx\software\bsp</BspGeneratedLocation>
-        <BspSettingsFile>C:\Users\rodri\OneDrive\Desktop\elex7660laser-main\elex7660laser-main\laser_rx\.\software\bsp\settings.bsp</BspSettingsFile>
+        <BspGeneratedTimeStamp>Apr 6, 2026 2:45:29 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1775468729813</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\rodri\OneDrive\Documents\BCIT\Level_6\ELEX7660\Labs\elex7660laser\laser_rx\software\bsp</BspGeneratedLocation>
+        <BspSettingsFile>C:\Users\rodri\OneDrive\Documents\BCIT\Level_6\ELEX7660\Labs\elex7660laser\laser_rx\software\bsp\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ccom_rx.sopcinfo</SopcDesignFile>
-        <SystemFileHash>36d634c557eaff3ae21766e4de9e8a62c50a3a18df0c980a8c9edcf3fad7</SystemFileHash>
+        <SystemFileHash>80bbd0a33b666eb2546efc55e292969dfced5229ab06b7e79dd644de6dddbcd</SystemFileHash>
         <JdiFile>default</JdiFile>
         <Cpu>intel_niosv_m_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
