@@ -37,10 +37,11 @@ int main() {
 		status &= 0b11111111;
 		char* status_bin = int_to_binary(status);
 
-		printf(" %4d | %s \n", status, status_bin);
+		printf(" %4d | %s | %s | %s \n", status, status_bin, );
 
 		// Flush the output to ensure it updates immediately in RiscFree
 		fflush(stdout);
+		free(status_bin);
 
     }
     return 0;
@@ -53,13 +54,12 @@ void head()
 }
 
 char* int_to_binary(int n) {
-    int bits = sizeof(int) * CHAR_BIT;
+    int bits = 8; // Locked to 8 bits
     char* binary_str = (char*)malloc(bits + 1);
+
     if (!binary_str) return NULL;
 
     binary_str[bits] = '\0';
-
-    // Cast to unsigned to ensure logical shift behavior
     unsigned int temp = (unsigned int)n;
 
     for (int i = bits - 1; i >= 0; i--) {

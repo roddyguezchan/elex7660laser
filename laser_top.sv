@@ -20,6 +20,7 @@ module laser_top
 		.clk50(clk50),
 		.ir_input(GPIO_1[0]),
 		.reset(!KEY[0]),
+		.done(rx_done),
 		.data(ir_data)
 	);
 	
@@ -27,6 +28,7 @@ module laser_top
 		.clk50(clk50),
 		.yaw_step_en(cyawstep),
 		.pitch_step_en(cpitchstep),
+		.latch_en(rx_done),
 		.yaw_step(GPIO_0[0]),
 		.pitch_step(GPIO_0[2])
 	);
@@ -34,7 +36,7 @@ module laser_top
 	assign GPIO_0[1] = cyawdir;
 	assign GPIO_0[3] = cpitchdir;
 	
-	assign {  cpitchdir, cpitchstep, cyawdir, cyawstep } = ir_data[3:0];
+	assign {  cpitchdir, cpitchstep, cyawdir, cyawstep } = { !ir_data[3], ir_data[2], !ir_data[1], ir_data[0] };
 	assign LED = ir_data;
 	
 	

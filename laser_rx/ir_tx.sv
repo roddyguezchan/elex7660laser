@@ -34,27 +34,19 @@ module ir_tx(
 		HEADER_BURST = 4'd1,
 		HEADER_SPACE = 4'd2, 
 		DATA_BURST = 4'd3, 
-		DATA_SPACE = 4'd4, 
-		DATA_BURST_INV = 4'd5, 
-		DATA_SPACE_INV = 4'd6, 
-		EOF  = 4'd7,
-		WAIT  = 4'd8
+		DATA_SPACE = 4'd4,  
+		EOF  = 4'd5,
+		WAIT  = 4'd6
 		} state_t;
 	state_t state;
 	
 	task next_bit_logic;
 		tick_count <= 0;
 		if (bit_count == 0) begin
-			if (data_sent) begin
-					state <= EOF;
-			end else begin
-					bit_count <= BIT_COUNT_RESET_VAL;
-					data_sent <= 1'b1;
-					state <= DATA_BURST_INV;
-			end
+			state <= EOF;
 		end else begin
 			bit_count <= bit_count - 1'b1;
-			state <= data_sent ? DATA_BURST_INV : DATA_BURST;
+			state <= DATA_BURST;
 		end
 	endtask
 	
@@ -63,7 +55,6 @@ module ir_tx(
 	logic message; // The signal that will be modulated with the carrier
 	
 	logic [2:0] bit_count; // Stores the bit position
-   logic data_sent;
 
 	logic [19:0] tick_count;
 	
@@ -72,7 +63,6 @@ module ir_tx(
 			state <= IDLE;
 			tick_count <= 0;
 			done <= 0;
-			data_sent <= 0;
 		end else case (state)
 		default : state <= IDLE;
 		
@@ -82,7 +72,6 @@ module ir_tx(
 				bit_count <= BIT_COUNT_RESET_VAL;
 				if ( start ) begin
 					data_out <= data;
-					data_sent <= 0;
 					done <= 0;
 					tick_count <= 0;
 					state <= HEADER_BURST;
@@ -132,30 +121,30 @@ module ir_tx(
 				end
 			end
 			
-			// DATA BURST INVERTED
-			DATA_BURST_INV : begin
-				message <= 1;
-				if ( tick_count >= TICK_562_5US ) begin
-					tick_count <= 0;
-					state <= DATA_SPACE_INV;
-				end else tick_count <= tick_count + 1'b1;
-			end
-			
-		// DATA SPACE INVERTED
-			DATA_SPACE_INV : begin
-				message <= 0;
-				if( ~data_out[bit_count] == 1'b1 ) begin
-					if (tick_count >= TICK_1_6875MS ) begin
-						tick_count <= 0;
-						next_bit_logic();
-					end else tick_count <= tick_count + 1'b1;
-				end else begin // if the inverse of the current bit is a 1
-					if ( tick_count >= TICK_562_5US ) begin
-						tick_count <= 0;
-						next_bit_logic();
-					end else tick_count <= tick_count + 1'b1;
-				end
-			end
+//			// DATA BURST INVERTED
+//			DATA_BURST_INV : begin
+//				message <= 1;
+//				if ( tick_count >= TICK_562_5US ) begin
+//					tick_count <= 0;
+//					state <= DATA_SPACE_INV;
+//				end else tick_count <= tick_count + 1'b1;
+//			end
+//			
+//		// DATA SPACE INVERTED
+//			DATA_SPACE_INV : begin
+//				message <= 0;
+//				if( ~data_out[bit_count] == 1'b1 ) begin
+//					if (tick_count >= TICK_1_6875MS ) begin
+//						tick_count <= 0;
+//						next_bit_logic();
+//					end else tick_count <= tick_count + 1'b1;
+//				end else begin // if the inverse of the current bit is a 1
+//					if ( tick_count >= TICK_562_5US ) begin
+//						tick_count <= 0;
+//						next_bit_logic();
+//					end else tick_count <= tick_count + 1'b1;
+//				end
+//			end
 			
 		
 			EOF : begin

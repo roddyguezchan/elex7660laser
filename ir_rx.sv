@@ -1,9 +1,9 @@
 // ir_rx.sv
-// Rafael Banalan 2026-04-01
+// Rafael Banalan 2026-04-06
 /*
 	This module uses a modified version of the NEC infrared transmission
 	protocol. The main difference is that instead of an address+inv and
-	data+inv state, we use one data+inv state of width 8 bits.
+	data+inv state, we use one data state of width 8 bits.
 */
 
 // THE RECEIVER IS ACTIVE LOW
@@ -49,7 +49,7 @@ module ir_rx(
 	logic [19:0] tick_count;
 	logic prev_level;
 	logic [3:0] bit_count;
-	logic [15:0] shift_reg;
+	logic [7:0] shift_reg;
 
 	always_ff @( posedge clk50 ) begin
 		if ( reset ) begin
@@ -124,10 +124,10 @@ module ir_rx(
 
 					DATA_SPACE: begin
 						// Falling edge: decode bit by HIGH duration
-						shift_reg <= {shift_reg[14:0], (tick_count > BIT_THRESHOLD)};
+						shift_reg <= {shift_reg[6:0], (tick_count > BIT_THRESHOLD)};
 						tick_count <= 0;
 
-						if ( bit_count == 4'd15 ) begin
+						if ( bit_count == 4'd7 ) begin
 							state <= VALIDATE;
 						end else begin
 							bit_count <= bit_count + 1;
@@ -148,11 +148,8 @@ module ir_rx(
 
 			// Validate by checking to see if the data matches the inverted data
 			if ( state == VALIDATE ) begin
-				if ( shift_reg[15:8] == ~shift_reg[7:0] ) begin
-					data <= shift_reg[15:8];
-					done <= 1;
-				end
-				
+				data <= shift_reg;
+				done <= 1;
 				state <= IDLE;
 				recv <= 0;
 			end
