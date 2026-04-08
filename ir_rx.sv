@@ -23,21 +23,26 @@ module ir_rx(
     output logic [7:0] data
 );
 
-	// Timing constants (ticks using 50 MHz period)
-	localparam BURST_MIN = 150_000;
-	localparam BURST_MAX = 300_000;
-	localparam SPACE_MIN = 50_000;
-	localparam SPACE_MAX = 175_000;
-	localparam DATA_BURST_MIN = 8_000;   // ~160 us
-	localparam DATA_BURST_MAX = 25_000;   // ~500 us
-	localparam BIT_THRESHOLD = 30_000;
-	localparam TIMEOUT = 400_000; // ~8 ms
+	// Timing constants (ticks using 50 MHz period = 20ns)
 
-	// Edge detector
+	localparam BURST_MIN = 80_000;   // 1.6ms
+	localparam BURST_MAX = 120_000;  // 2.4ms
+	
+	localparam SPACE_MIN = 35_000;   // 0.7ms
+	localparam SPACE_MAX = 65_000;   // 1.3ms
+
+	localparam DATA_BURST_MIN = 5_000;   // 100us
+	localparam DATA_BURST_MAX = 22_000;  // 440us
+
+	localparam BIT_THRESHOLD = 25_000;   // 500us
+
+	localparam TIMEOUT = 500_000; // 10ms total timeout for recovery
+
+	// Edge detector (metastability protection)
 	logic ir_sync0, ir_sync;
 	always_ff @( posedge clk50 ) begin
 		ir_sync0 <= ir_input;
-		ir_sync  <= ir_sync0;   // two-stage removes metastability (thank you Gemini)
+		ir_sync  <= ir_sync0;
 	end
 
 	// Receiver state machine
@@ -65,41 +70,35 @@ module ir_rx(
 			done <= 0;
 			
 			if ( ir_sync == prev_level ) begin
-				// No edge keep counting 
+				// No edge keep counting
 				if ( tick_count < 20'hFFFFF ) // saturate to avoid overflow
 					tick_count <= tick_count + 1;
-					  
 			end else begin
-
 				// Edge detected
 				case ( state )
-
 					IDLE: begin
 						// Wait for falling edge (start of header burst)
 						if ( prev_level == 1'b1 ) begin
 							recv <= 1;
 							state <= HEADER_BURST;
 						end
-						
 						tick_count <= 0;
 					end
 
 					HEADER_BURST: begin
 						// Rising edge
-						// measure 9 ms LOW burst
+							   
 						if ( tick_count >= BURST_MIN && tick_count <= BURST_MAX ) begin
 							state <= HEADER_SPACE;
 						end else begin
 							recv <= 0;
 							state <= IDLE;
 						end
-						
 						tick_count <= 0;
 					end
 
 					HEADER_SPACE: begin
-						// Falling edge
-						// measure 4.5 ms HIGH space
+						//Falling edge
 						if ( tick_count >= SPACE_MIN && tick_count <= SPACE_MAX ) begin
 							bit_count <= 0;
 							shift_reg <= 0;
@@ -112,7 +111,7 @@ module ir_rx(
 					end
 
 					DATA_BURST: begin
-						// Rising edge: validate 560 us LOW marker
+						// Rising edge
 						if ( tick_count >= DATA_BURST_MIN && tick_count <= DATA_BURST_MAX ) begin
 							state <= DATA_SPACE;
 						end else begin
@@ -139,11 +138,9 @@ module ir_rx(
 						state <= IDLE;
 						recv <= 0;
 					end
-
 				endcase
-				
 				prev_level <= ir_sync;
-				
+	
 			end
 
 			// Validate by checking to see if the data matches the inverted data
@@ -164,5 +161,4 @@ module ir_rx(
 			end
 		end
 	end
-
 endmodule

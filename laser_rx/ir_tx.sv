@@ -19,10 +19,13 @@ module ir_tx(
 );
 	// Timing constants for 50MHz clock (1 tick = 20ns)
 	localparam BIT_COUNT_RESET_VAL = 3'b111;
-	localparam TICK_HEADER_BURST = 225_000; // header burst time
-	localparam TICK_HEADER_SPACE = 112_500; // header space time
+	localparam TICK_HEADER_BURST = 100_000; // header burst time
+	localparam TICK_HEADER_SPACE = 50_000; // header space time
 	localparam TICK_DATA_BURST = 15_000; // data burst / data zero / EOF burst
-	localparam TICK_DATA_SPACE = 45_000; // data one
+	localparam TICK_DATA_SPACE = 35_000; // data one
+	localparam BURST_LIMIT = 4'd5; // sending 5 packets then rest
+	localparam TICK_WAIT_GAP = 100_000;   // 2ms gap between packets in a burst
+   localparam TICK_LONG_WAIT = 600_000;  // 12ms AGC recovery gap
 	
 	// Generate carrier frequency
 	logic carrier;
@@ -35,8 +38,9 @@ module ir_tx(
 		HEADER_SPACE = 4'd2, 
 		DATA_BURST = 4'd3, 
 		DATA_SPACE = 4'd4,  
-		EOF  = 4'd5,
-		WAIT  = 4'd6
+		EOF = 4'd5,
+		WAIT = 4'd6,
+		LONG_WAIT = 4'd7
 		} state_t;
 	state_t state;
 	
@@ -57,6 +61,8 @@ module ir_tx(
 	logic [2:0] bit_count; // Stores the bit position
 
 	logic [19:0] tick_count;
+	
+	logic [2:0] burst_counter; // Counts 0 to 6
 	
 	always_ff @(posedge clk50) begin
 		if ( reset ) begin
@@ -105,7 +111,7 @@ module ir_tx(
 				end else tick_count <= tick_count + 1'b1;
 			end
 			
-		// DATA SPATE
+		// DATA SPACE
 			DATA_SPACE : begin
 				message <= 0;
 				if( data_out[bit_count] == 1'b1 ) begin
@@ -146,30 +152,44 @@ module ir_tx(
 //				end
 //			end
 			
-		
+		// EOF STATE
 			EOF : begin
 				message <= 1;
 				if ( tick_count >= TICK_DATA_BURST ) begin
 					tick_count <= 0;
 					done <= 1;
-					if ( start ) state <= WAIT;
-					else state <= IDLE;
+					burst_counter <= burst_counter + 1'b1;
+					state <= WAIT; 
 				end else tick_count <= tick_count + 1'b1;
 			end
 
+		// INTER-PACKET WAIT
 			WAIT : begin
 				message <= 0;
-				if ( tick_count >= '1 ) begin
+				done <= 0;
+				if ( tick_count >= TICK_WAIT_GAP ) begin
 					tick_count <= 0;
-					state <= IDLE;
+					// Increased sprint to 10 packets
+					if ( burst_counter >= BURST_LIMIT ) begin
+						 state <= LONG_WAIT;
+					end else begin
+						 state <= IDLE;
+					end
 				end else tick_count <= tick_count + 1'b1;
 			end
-			
+
+		// AGC RECOVERY WAIT
+			LONG_WAIT : begin
+			  message <= 0;
+			  if ( tick_count >= TICK_LONG_WAIT ) begin
+					tick_count <= 0;
+					burst_counter <= 0; // Reset burst credit
+					state <= IDLE;
+			  end else tick_count <= tick_count + 1'b1;
+			end
 		endcase
 	end
 	
 	assign ir_out = carrier & message;
-	
-	
 	
 endmodule

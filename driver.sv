@@ -9,7 +9,7 @@ module driver
 	logic clk0;
 	logic latched;
 
-	clkdiv #(50_000_000, 50000) c0 (clk50, clk0);
+	clkdiv #(50_000_000, 1000) c0 (clk50, clk0);
 
 	always_ff @(posedge clk50) begin
 		if (latch_en)
