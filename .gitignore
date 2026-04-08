@@ -21,6 +21,7 @@
 **/CMakeScratch/
 **/pkgRedirects/
 **/.indexes/
+**/build/
 **/Debug/
 **/Release/
 *.elf
