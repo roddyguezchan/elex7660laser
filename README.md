@@ -2,9 +2,14 @@
 
 The Stepper Controlled Optical Positioning Engine (or SCOPE for short) is a laser data transmission and positioning system designed as our final project for the ELEX 7660 Digital System Design course at the British Columbia Institute of Technology. The project was assigned a timeline of five weeks, with a demo of what was accomplished at the end of the period. SCOPE's main goal is to center a laser onto a target for optimal data transmission by use of a gimbal motor system on the transmitter. The receiver, which is handheld for demonstration, can be moved around at a moderate pace and followed by the transmitter. While data transmission via laser was not completed due to time constraints with the project, the system is ready for its implementation.
 
+| The Transmitter | The Receiver |
+| :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/5bb4d6b3-bfe0-416d-87df-562b62456c2b" width="100%" /> | <img src="https://github.com/user-attachments/assets/7a496680-bde6-49c9-b667-82c1e851ffa2" width="100%" /> |
+| **Stepper motors, laser, and IR receiver**<br>Handles target tracking and performs the search when target is lost. | **Lid off, exposing the QPD and IR LED**<br>Calculates the laser offset and transmits that data back over IR. |
+
 ## Theory of Operation
 
-In normal operation, the transmitter looks for the receiver by scanning the laser in its search area. Since the laser is highly directional, a quadrant photodiode (QPD) on the receiver is used to determine where to aim the laser and to receive the incoming data at the same time. When the laser hits the QPD, a message is sent to the transmitter via infrared to confirm that the receiver is in range and can start locking into the center of the QPD. To do so, the receiver tells the transmitter where the laser is hitting on the QPD, and the transmitter corrects for that in order to maintain its aim on the center. In the event the laser is lost during reception, the transmitter uses a taxicab spiral to find the receiver again.
+In normal operation, the transmitter looks for the receiver by scanning the laser in its search area. Since the laser is highly directional, a quadrant photodiode (QPD) on the receiver is used to determine where to aim the laser and to receive the incoming data at the same time. When the laser hits the QPD, a message is sent to the transmitter via infrared to confirm that the receiver is in range and can start locking into the center of the QPD. To do so, the receiver tells the transmitter where the laser is hitting on the QPD, and the transmitter corrects for that in order to maintain its aim on the center. In the event the laser is lost, the transmitter uses a taxicab spiral to find the receiver again.
 
 The full report, including extensive coverage of testing and full theory of operation, can be found [here](/other/ELEX%207660%20Final%20Project.pdf).
 
@@ -30,7 +35,7 @@ In addition, the following stretch goals were assigned:
 ```
 🟨 **Data communication with the target**
 ```
-- Implemented using a taxicab spiral search algorithm 
+- Implemented using IR to send offset data back to the transmitter
 ```
 🟨 **Able to acquire/track at long range**
 ```
