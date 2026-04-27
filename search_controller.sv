@@ -1,3 +1,11 @@
+// search_controller.sv
+// Roedriguez Chan 2026-04-12
+/*
+    This module handles the high level functionality of the transmitter unit. It
+    does this by switching between the high level states of the transmitter's
+    behaviour, as well as providing the needed logic to perform the search itself.
+*/
+
 module search_controller (
     input  logic clk50,
     input  logic reset,        // KEY[0]

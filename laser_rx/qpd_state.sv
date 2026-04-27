@@ -1,3 +1,9 @@
+// qpd_state.sv
+// Rafael Banalan 2026-04-05
+/*
+	This module parses the QPD data into a command to be sent
+	to the transmitter via IR.
+*/
 module qpd_state(
     input  logic        clk50,
     input  logic        reset,

@@ -1,3 +1,9 @@
+// laser_top.sv
+// Rafael Banalan 2026-04-23
+/*
+	This module ties all the sub-modules of the transmitter module, and also
+	provides the needed step_tick for the search_controller.
+*/
 module laser_top
   ( input  logic clk50, // internal system 50MHz clock
     input  logic [1:0] KEY, // onboard FPGA dev board buttons

@@ -3,7 +3,7 @@
 /*
 	This module uses a modified version of the NEC infrared transmission
 	protocol. The main difference is that instead of an address+inv and
-	data+inv state, we use one data+inv state of width 8 bits.
+	data+inv state, we use one data state of width 8 bits.
 */
 
 module ir_tx(
@@ -25,7 +25,7 @@ module ir_tx(
 	localparam TICK_DATA_SPACE = 35_000; // data one
 	localparam BURST_LIMIT = 4'd5; // sending 5 packets then rest
 	localparam TICK_WAIT_GAP = 100_000;   // 2ms gap between packets in a burst
-   localparam TICK_LONG_WAIT = 600_000;  // 12ms AGC recovery gap
+   	localparam TICK_LONG_WAIT = 600_000;  // 12ms AGC recovery gap
 	
 	// Generate carrier frequency
 	logic carrier;

@@ -1,3 +1,6 @@
+// This code is taken from our ELEX 2117 course with Ed Casas.
+// Pretty sure he's the one who wrote this module
+
 module clkdiv
   #( fin = 50_000_000, fout = 1_000 )
    ( input logic clkin, 

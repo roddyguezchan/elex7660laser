@@ -1,3 +1,10 @@
+// laser_rx.sv
+// Rafael Banalan 2026-04-01
+/*
+	This is the top level module for the receiver. It
+	ties the sub-modules together.
+*/
+
 module laser_rx(
 	input logic clk50, clk38,
 	input  logic [1:0] KEY, // onboard FPGA dev board buttons

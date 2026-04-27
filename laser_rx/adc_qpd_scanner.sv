@@ -1,6 +1,10 @@
 // adc_qpd_scanner.sv
 // Derived from code by Ed Casas (ltc2308.sv)
 // Modified for use by Rafael Banalan
+/*
+	This code adresses the onboard ADC to read the QPD ADC values. It 
+	outputs each channel as a ready-to-use 12-bit logic value.
+*/
 
 module adc_qpd_scanner (
     input  logic clk, reset,       // 50 MHz clock
