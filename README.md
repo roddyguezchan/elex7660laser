@@ -13,6 +13,13 @@ In normal operation, the transmitter looks for the receiver by scanning the lase
 
 The full report, including extensive coverage of testing and full theory of operation, can be found [here](/other/ELEX%207660%20Final%20Project.pdf).
 
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=NGZtt0j52rA">
+    <img src="https://img.youtube.com/vi/NGZtt0j52rA/maxresdefault.jpg" alt="SCOPE Demo" style="width:80%;">
+  </a>
+  <p><em>Click to watch the full demo on YouTube</em></p>
+</div>
+
 ## Project Objectives
 
 Our project was assigned goals that were to be met by the date of the demo. These objectives, as well as what was accomplished, are as follows:
